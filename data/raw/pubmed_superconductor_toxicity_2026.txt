@@ -1,0 +1,18 @@
+PubMed Central — Journal of Occupational and Environmental Medicine
+DOI: 10.1097/JOM.0000000000002847
+
+Title: Toxicological Assessment of Hydrogen-Rich Lanthanum and Cerium Hydride Compounds: Systematic Review and Preliminary Inhalation Exposure Data
+
+Authors: Chen L, Osei-Bonsu K, Ramirez-Vega J, et al.
+Published: March 2026
+
+Abstract:
+Lanthanum and cerium compounds are classified as rare earth elements with established occupational health risks. This systematic review consolidates current peer-reviewed evidence on the toxicological profiles of lanthanum hydride (LaH₁₀), cerium hydride (CeH₉), and ternary lanthanum-cerium hydride systems, with reference to emerging synthesis routes reported in the preprint literature.
+
+Lanthanum compounds: Occupational studies in rare earth mining and processing facilities consistently document pulmonary granulomatosis following chronic inhalation exposure. LaH compounds are not specifically studied, but lanthanide-based pneumoconiosis is well-characterised. IARC classifies cerium compounds as Group 2B (possibly carcinogenic to humans) based on limited animal evidence. No human carcinogenicity data are available for the specific LaH₁₀ phase.
+
+Cerium hydrides: The literature documents cytotoxicity in vitro at concentrations above 50 μg/mL, primarily through oxidative stress mechanisms. CeO₂ nanoparticles, while chemically distinct, exhibit hepatotoxicity in rodent models at doses relevant to occupational inhalation scenarios.
+
+Ternary hydrides: The peer-reviewed literature contains no long-term exposure studies specific to lanthanum-cerium ternary hydride compounds. Preprint claims of practical synthesis routes increase the urgency of safety characterisation. The authors note that the extreme reactivity of hydrogen-rich hydrides under ambient conditions — including risk of spontaneous decomposition — presents safety challenges distinct from those of stable lanthanum or cerium oxides.
+
+Conclusions: Current peer-reviewed evidence is insufficient to establish safe occupational exposure limits for LaH₁₀ or related ternary hydride compounds. Until inhalation toxicology, reproductive toxicology, and chronic exposure data are available through peer-reviewed channels, these materials should be handled under BSL-equivalent containment protocols for unknown hazard materials.

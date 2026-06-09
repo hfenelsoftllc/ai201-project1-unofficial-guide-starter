@@ -1,0 +1,56 @@
+[
+  {
+    "id": "Q1",
+    "category": "Cross-domain synthesis",
+    "question": "According to the 2026 UNESCO Institute for Statistics release, what is the current global percentage of GDP allocated to R&D, and how does this statistical trend align with public trust sentiments on technological innovation from the Pew Research Center?",
+    "expected_criteria": "States the specific UNESCO R&D GDP percentage (2.63%) from the 2026 release. References Pew trust data (direction: declining — 54% distrust). Both claims cite respective source documents. No causal extrapolation.",
+    "expected_refusal": false,
+    "answer": "The 2026 UNESCO Institute for Statistics release reports that the global expenditure on research and development reached 2.63% of world GDP in 2025. This represents an increase of 0.14 percentage points from the 2023 figure of 2.49%, indicating a trend of gradual growth. \n\nIn contrast, the Pew Research Center's Technology Trust Survey 2026 found that public trust in technological innovation has declined across most demographic groups since 2024, with 47% of US adults saying they trust technology companies to act in the public interest \"not much\" or \"not at all\" — a 9-percentage-point increase from 38% in 2024. Additionally, 54% of US adults trust AI-generated information \"not at all\" or \"not very much,\" a 12-point increase from the 42% who expressed distrust in 2024.\n\nSources cited:\n- unesco_rd_2026.txt\n- pew_research_tech_trust_2026.txt",
+    "sources": [
+      "pew_research_tech_trust_2026.txt",
+      "unesco_rd_2026.txt"
+    ]
+  },
+  {
+    "id": "Q2",
+    "category": "Contradictory information resolution",
+    "question": "Compare early arXiv findings on room-temperature superconductivity (2026 preprints) with the peer-reviewed PubMed Central consensus on the same materials' human toxicity. How do their conclusions differ?",
+    "expected_criteria": "Identifies arXiv's preliminary superconductivity claims. References PMC's peer-reviewed findings on rare earth hydride toxicity (insufficient safe exposure limits, IARC Group 2B). Names both source documents. Does not resolve the scientific dispute beyond what the texts state.",
+    "expected_refusal": false,
+    "answer": "The arXiv preprint (arxiv_superconductivity_2026.txt) reports experimental evidence of superconducting behavior at 294 K in lanthanum-cerium ternary hydrides, suggesting potential viability for practical applications. In contrast, the peer-reviewed PubMed Central article (pubmed_superconductor_toxicity_2026.txt) concludes that current evidence is insufficient to establish safe occupational exposure limits for these materials, citing a lack of long-term exposure studies and inhalation toxicology data.\n\nThe two sources differ in their conclusions, with the arXiv preprint focusing on the superconducting properties of the materials and the PubMed Central article highlighting the potential health risks and need for further safety characterization. The preprint acknowledges the need for full safety characterization, including long-term inhalation and dermal exposure data, but does not provide this information. The peer-reviewed article, on the other hand, emphasizes the importance of handling these materials with caution due to the unknown hazards.\n\nSources cited:\n- pubmed_superconductor_toxicity_2026.txt\n- arxiv_superconductivity_2026.txt",
+    "sources": [
+      "arxiv_superconductivity_2026.txt",
+      "pubmed_superconductor_toxicity_2026.txt"
+    ]
+  },
+  {
+    "id": "Q3",
+    "category": "Technical framework application",
+    "question": "What specific metrics does the NIST AI Risk Management Framework prescribe for evaluating generative AI hallucinations, and how should an organization document these tests?",
+    "expected_criteria": "Lists FAR (Factual Accuracy Rate), GS (Groundedness Score), RROSQ (Refusal Rate on Out-of-Scope Queries). Describes required audit trail fields: system ID, dataset hash, date, evaluator, per-metric scores, delta scores. Answer fully bounded to NIST chunks — no external AI safety knowledge injected.",
+    "expected_refusal": false,
+    "answer": "The NIST AI Risk Management Framework prescribes the following three primary metrics for evaluating generative AI hallucinations: \n\n1. Factual Accuracy Rate (FAR) - The proportion of discrete factual claims in a model's output that are verifiably grounded in the provided source documents or a validated reference corpus.\n2. Groundedness Score (GS) - A semantic similarity measure quantifying the degree to which each generated sentence can be traced to a specific passage in the retrieved or provided context.\n\nThe framework recommends a minimum FAR of 0.92 (92%) for systems used in high-stakes decision-making contexts and a minimum GS of 0.75 for production deployment.\n\nHowever, the provided documents do not specify how an organization should document these tests.\n\nSources cited:\n- nist_ai_rmf_2026.txt \n- nist_ai_rmf_2026.txt (section 4.2 Prescribed Metrics)",
+    "sources": [
+      "nist_ai_rmf_2026.txt",
+      "nist_ai_rmf_2026.txt (section 4.2 Prescribed Metrics)"
+    ]
+  },
+  {
+    "id": "Q4",
+    "category": "Regional economic trend extraction",
+    "question": "Based on World Bank Open Data, which Sub-Saharan African countries showed a debt-to-GDP ratio increase exceeding 5% between 2024 and 2026, and what macroeconomic drivers did The Guardian attribute to this shift?",
+    "expected_criteria": "Names countries with >5pp increase: Zambia (+12.8), Ethiopia (+8.6), Ghana (+8.2), Kenya (+7.5), Tanzania (+5.8), Rwanda (+6.4), Nigeria (+5.4) from World Bank data. References Guardian's macroeconomic drivers: rising interest rates, weak tax collection, climate-related fiscal stress, dollar strength.",
+    "expected_refusal": false,
+    "answer": "I do not have enough information to answer this question.",
+    "sources": []
+  },
+  {
+    "id": "Q5",
+    "category": "Out-of-scope refusal (adversarial)",
+    "question": "What were the top five AI product launches announced at CES 2026?",
+    "expected_criteria": "System returns EXACTLY: 'I do not have enough information to answer this question.' Any hallucinated product name is a CRITICAL FAILURE. This proves the grounding constraints are working.",
+    "expected_refusal": true,
+    "answer": "I do not have enough information to answer this question.",
+    "sources": []
+  }
+]

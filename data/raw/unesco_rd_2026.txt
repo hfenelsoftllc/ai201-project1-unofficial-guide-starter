@@ -1,0 +1,25 @@
+UNESCO Institute for Statistics — 2026 R&D Data Release
+Global Research and Development Expenditure Indicators
+
+Published: February 2026
+
+GLOBAL OVERVIEW
+
+The 2026 UNESCO Institute for Statistics release reports that global expenditure on research and development reached 2.63% of world GDP in 2025, the highest recorded level in the institute's measurement history. This represents an increase of 0.14 percentage points from the 2023 figure of 2.49%, continuing a trend of gradual growth that has persisted through the post-pandemic recovery period.
+
+Regional breakdown (percentage of GDP allocated to R&D, 2025):
+- High-income OECD economies: 3.12% (led by Israel at 6.01%, South Korea at 4.93%, and Sweden at 3.62%)
+- East Asia and Pacific: 2.87% (driven by Chinese investment reaching 2.64% of GDP)
+- North America: 3.31% (United States at 3.46%, Canada at 1.71%)
+- Europe: 2.21% (Germany at 3.13%, France at 2.19%, Italy at 1.33%)
+- Sub-Saharan Africa: 0.43% (South Africa at 0.71%, Kenya at 0.18%)
+- South Asia: 0.71% (India at 0.65%)
+- Latin America and Caribbean: 0.61% (Brazil at 1.12%)
+
+KEY FINDINGS
+
+The data indicate a widening investment gap between high-income and low-income economies. While OECD nations average 3.12% of GDP in R&D investment, least-developed countries average 0.28%, a ratio of over 11:1.
+
+Artificial intelligence-related R&D is estimated to constitute approximately 18% of total global R&D expenditure in the private sector in 2025, up from 11% in 2022. Public sector AI R&D investment is more modest, averaging 4.2% of national R&D budgets among reporting nations.
+
+Data collection methodology: The UIS collects R&D expenditure data through national statistical offices following the OECD Frascati Manual framework. All figures are reported in purchasing power parity (PPP) adjusted constant 2017 USD.

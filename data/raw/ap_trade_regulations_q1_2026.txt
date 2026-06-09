@@ -1,0 +1,17 @@
+WASHINGTON (AP) — International trade authorities enacted a sweeping package of digital commerce regulations in the first quarter of 2026, reshaping the compliance landscape for technology firms operating across borders.
+
+The United States Trade Representative and European Commission jointly announced the Digital Commerce Accountability Framework (DCAF) on January 14, 2026. The framework establishes binding rules for cross-border data flows, algorithmic transparency, and AI-generated content labelling.
+
+Key compliance deadlines identified in the framework:
+- January 31, 2026: Technology companies must register AI-generated content systems with national regulatory authorities.
+- February 28, 2026: Initial algorithmic impact assessments are due for systems handling consumer financial data.
+- March 15, 2026: Full audit trail documentation must be submitted for AI systems used in hiring, lending, or healthcare triage.
+- March 31, 2026: Cross-border data transfer agreements must be renegotiated under the new DCAF standard clauses.
+
+The agreement covers 47 signatory nations, including all G7 economies and 19 emerging market states. Non-compliance penalties are tiered, reaching up to 6% of global annual revenue for repeat violations.
+
+Industry groups representing semiconductor manufacturers and cloud computing providers expressed concern about the pace of implementation. The Consumer Technology Association called the March 31 deadline "unworkable" for smaller operators lacking dedicated compliance departments.
+
+Chinese and Indian trade authorities declined to join the accord, instead announcing parallel national frameworks. Analysts warned of potential regulatory fragmentation affecting supply chains dependent on cross-Pacific data transfers.
+
+The Associated Press wire service | January 15, 2026

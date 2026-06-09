@@ -1,0 +1,28 @@
+Statista Market Insights | Digital Trade Compliance Monitor
+Q1 2026 Regulatory Deadline Tracker: AI and Digital Commerce
+
+Report Date: January 2026
+
+COMPLIANCE DEADLINE SUMMARY: Q1 2026
+
+The following compliance deadlines are drawn from official regulatory filings, government gazette publications, and Statista's proprietary regulatory tracking database for the Digital Commerce Accountability Framework (DCAF) and related national implementations.
+
+JANUARY 2026
+- January 14, 2026: DCAF formally adopted by 47 signatory nations at Geneva ministerial meeting.
+- January 31, 2026: AI content system registration deadline — technology companies operating in EU and US markets must register AI-generated content systems with the relevant national regulatory authority. Estimated 12,400 systems globally subject to this requirement.
+- January 31, 2026: Preliminary data localisation impact assessments due under DCAF Article 17 for companies with over $1B annual cross-border digital revenue.
+
+FEBRUARY 2026
+- February 14, 2026: National implementing legislation must be tabled in signatory parliaments; no enforcement action permitted before this date.
+- February 28, 2026: Algorithmic impact assessments due for AI systems handling consumer financial data (lending decisions, insurance pricing, credit scoring).
+
+MARCH 2026
+- March 15, 2026: Full audit trail documentation submission deadline for AI systems used in hiring, lending, and healthcare triage applications. Non-compliance triggers provisional shutdown orders in 23 of 47 signatory jurisdictions.
+- March 31, 2026: Final deadline for renegotiation of cross-border data transfer agreements to DCAF standard clauses. After this date, existing agreements using deprecated standard contractual clauses are void. Penalty: up to 6% of global annual revenue per violation.
+
+COMPLIANCE COST ESTIMATES (Statista Research Division)
+- Average compliance cost for large tech companies (>$10B revenue): $47M per company
+- Average compliance cost for mid-tier companies ($1B–$10B revenue): $8.3M per company
+- Estimated total global compliance spend: $2.4B across signatory jurisdictions
+
+Source: Statista Digital Regulation Database, official DCAF regulatory texts, national regulatory authority public filings.

@@ -1,0 +1,42 @@
+National Institute of Standards and Technology
+AI Risk Management Framework — 2026 Update
+NIST AI 100-1 (Rev. 2)
+
+SECTION 4: MEASUREMENT AND EVALUATION OF GENERATIVE AI HALLUCINATIONS
+
+4.1 Overview
+
+The 2026 update to the NIST AI Risk Management Framework introduces a standardised set of metrics for evaluating the tendency of generative AI systems to produce outputs that are ungrounded, factually incorrect, or unsupported by source documentation. These metrics apply to any generative AI system deployed in a context where factual accuracy is a material concern, including but not limited to: legal document summarisation, medical information retrieval, financial analysis, and government information services.
+
+4.2 Prescribed Metrics
+
+NIST prescribes the following three primary metrics for evaluating generative AI hallucinations:
+
+(1) Factual Accuracy Rate (FAR)
+Definition: The proportion of discrete factual claims in a model's output that are verifiably grounded in the provided source documents or a validated reference corpus.
+Measurement procedure: Each output is segmented into discrete claims. A trained human evaluator or automated claim-verification system labels each claim as Grounded, Ungrounded, or Uncertain. FAR = (Grounded claims) / (Total claims). A minimum FAR of 0.92 (92%) is recommended for systems used in high-stakes decision-making contexts.
+
+(2) Groundedness Score (GS)
+Definition: A semantic similarity measure quantifying the degree to which each generated sentence can be traced to a specific passage in the retrieved or provided context.
+Measurement procedure: For each output sentence, compute the maximum cosine similarity between the sentence embedding and all context passage embeddings. Average across all output sentences. GS ranges from 0 (no grounding) to 1 (perfect grounding). A minimum GS of 0.75 is recommended for production deployment.
+
+(3) Refusal Rate on Out-of-Scope Queries (RROSQ)
+Definition: The fraction of queries that fall outside the system's defined knowledge domain for which the system correctly returns a refusal or "insufficient information" response, rather than hallucinating an answer.
+Measurement procedure: Construct an adversarial test set of queries known to be outside the corpus (minimum 50 queries). Submit each to the system. RROSQ = (Correct refusals) / (Total out-of-scope queries). A minimum RROSQ of 0.95 (95%) is required for systems handling sensitive or high-stakes queries.
+
+4.3 Documentation Requirements
+
+Organisations must maintain a structured audit trail for all hallucination evaluation runs. Required fields:
+- System identifier and version number
+- Evaluation dataset name and cryptographic hash (SHA-256)
+- Evaluation date and evaluator identity (human or automated system name/version)
+- Per-metric scores: FAR, GS, RROSQ
+- Number of claims evaluated and proportion labelled Uncertain
+- Comparison to prior evaluation run (delta scores)
+- Any remediation actions taken in response to below-threshold scores
+
+Audit trail records must be retained for a minimum of 3 years and made available to regulatory authorities upon request within 10 business days.
+
+4.4 Remediation Thresholds
+
+If FAR falls below 0.85 or RROSQ falls below 0.90, the system must be taken offline from production use until the deficiency is corrected and re-evaluation confirms compliance. Systems with GS below 0.65 must display a user-facing warning indicating that outputs may not be fully grounded in provided source materials.

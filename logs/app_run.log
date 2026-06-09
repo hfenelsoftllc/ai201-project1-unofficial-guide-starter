@@ -1,0 +1,60 @@
+2026-06-08 03:16:48,897 [INFO] httpx — HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-06-08 03:16:49,838 [INFO] httpx — HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-06-08 03:16:49,932 [INFO] httpx — HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-06-08 03:17:23,537 [INFO] pipeline — Found 9 existing files in 'data/raw'
+2026-06-08 03:17:23,537 [INFO] pipeline — 
+[Stage 1] Document Ingestion
+2026-06-08 03:17:23,538 [INFO] ingest — Loading ap_trade_regulations_q1_2026.txt (.txt)
+2026-06-08 03:17:23,539 [INFO] ingest —   ✓ ap_trade_regulations_q1_2026.txt — 242 words extracted
+2026-06-08 03:17:23,540 [INFO] ingest — Loading arxiv_superconductivity_2026.txt (.txt)
+2026-06-08 03:17:23,541 [INFO] ingest —   ✓ arxiv_superconductivity_2026.txt — 226 words extracted
+2026-06-08 03:17:23,542 [INFO] ingest — Loading guardian_subsaharan_debt_2026.txt (.txt)
+2026-06-08 03:17:23,542 [INFO] ingest —   ✓ guardian_subsaharan_debt_2026.txt — 236 words extracted
+2026-06-08 03:17:23,543 [INFO] ingest — Loading nist_ai_rmf_2026.txt (.txt)
+2026-06-08 03:17:23,543 [INFO] ingest —   ✓ nist_ai_rmf_2026.txt — 504 words extracted
+2026-06-08 03:17:23,544 [INFO] ingest — Loading pew_research_tech_trust_2026.txt (.txt)
+2026-06-08 03:17:23,546 [INFO] ingest —   ✓ pew_research_tech_trust_2026.txt — 301 words extracted
+2026-06-08 03:17:23,546 [INFO] ingest — Loading pubmed_superconductor_toxicity_2026.txt (.txt)
+2026-06-08 03:17:23,546 [INFO] ingest —   ✓ pubmed_superconductor_toxicity_2026.txt — 288 words extracted
+2026-06-08 03:17:23,547 [INFO] ingest — Loading statista_trade_compliance_q1_2026.txt (.txt)
+2026-06-08 03:17:23,548 [INFO] ingest —   ✓ statista_trade_compliance_q1_2026.txt — 304 words extracted
+2026-06-08 03:17:23,548 [INFO] ingest — Loading unesco_rd_2026.txt (.txt)
+2026-06-08 03:17:23,548 [INFO] ingest —   ✓ unesco_rd_2026.txt — 277 words extracted
+2026-06-08 03:17:23,548 [INFO] ingest — Loading wdi_sub_saharan_debt_gdp_2024_2026.csv (.csv)
+2026-06-08 03:17:23,551 [INFO] ingest —   ✓ wdi_sub_saharan_debt_gdp_2024_2026.csv — 254 words extracted
+2026-06-08 03:17:23,551 [INFO] ingest — Corpus loaded: 9 documents from 'data/raw'
+2026-06-08 03:17:23,551 [INFO] ingest — validate_docs: all 9 documents passed.
+2026-06-08 03:17:23,551 [INFO] pipeline —   → 9 documents loaded and validated
+2026-06-08 03:17:23,551 [INFO] pipeline — 
+[Stage 2] Chunking
+2026-06-08 03:17:23,552 [INFO] chunk —   'ap_trade_regulations_q1_2026.txt' → 2 chunks (from 1819 chars)
+2026-06-08 03:17:23,552 [INFO] chunk —   'arxiv_superconductivity_2026.txt' → 2 chunks (from 1804 chars)
+2026-06-08 03:17:23,552 [INFO] chunk —   'guardian_subsaharan_debt_2026.txt' → 2 chunks (from 1766 chars)
+2026-06-08 03:17:23,552 [INFO] chunk —   'nist_ai_rmf_2026.txt' → 4 chunks (from 3495 chars)
+2026-06-08 03:17:23,552 [INFO] chunk —   'pew_research_tech_trust_2026.txt' → 2 chunks (from 1992 chars)
+2026-06-08 03:17:23,552 [INFO] chunk —   'pubmed_superconductor_toxicity_2026.txt' → 2 chunks (from 2339 chars)
+2026-06-08 03:17:23,552 [INFO] chunk —   'statista_trade_compliance_q1_2026.txt' → 3 chunks (from 2258 chars)
+2026-06-08 03:17:23,552 [INFO] chunk —   'unesco_rd_2026.txt' → 2 chunks (from 1837 chars)
+2026-06-08 03:17:23,552 [INFO] chunk —   'wdi_sub_saharan_debt_gdp_2024_2026.csv' → 2 chunks (from 2297 chars)
+2026-06-08 03:17:23,552 [WARNING] chunk — GUARDRAIL: only 21 chunks total. Chunks may be too large. Consider reducing chunk_size to 150 tokens.
+2026-06-08 03:17:23,552 [INFO] chunk — Chunking complete: 21 total chunks from 9 documents.
+2026-06-08 03:17:23,552 [INFO] chunk — validate_chunks: all 21 chunks passed.
+2026-06-08 03:17:23,552 [INFO] pipeline —   → 21 chunks produced
+2026-06-08 03:17:23,552 [INFO] pipeline — 
+[Stage 3] Embedding + Vector Store
+2026-06-08 03:17:23,552 [INFO] embed — Fitting embedding model on 21 texts…
+2026-06-08 03:17:23,686 [INFO] embed —   ✓ Embedding model fitted. Vocab=3338, SVD explains 100.0% variance.
+2026-06-08 03:17:23,693 [INFO] embed — Embedding model saved to 'vectorstore\unofficial_guide_model.pkl'
+2026-06-08 03:17:23,693 [INFO] embed — Encoding 21 chunks…
+2026-06-08 03:17:23,945 [INFO] embed — VectorStore initialised at 'vectorstore\chroma' (collection='unofficial_guide')
+2026-06-08 03:17:24,116 [INFO] embed — VectorStore cleared.
+2026-06-08 03:17:24,313 [INFO] embed — ✓ Integrity check passed: 21 vectors stored with full metadata.
+2026-06-08 03:17:24,319 [INFO] embed — ✓ Metadata spot-check passed on all 21 stored vectors.
+2026-06-08 03:17:24,323 [INFO] pipeline —   → 21 vectors stored with metadata
+2026-06-08 03:17:24,333 [INFO] retrieve — Retrieved 4 chunks. Best: dist=0.452, source='ap_trade_regulations_q1_2026.txt'
+2026-06-08 03:17:24,333 [INFO] generate — Generating with Groq (llama-3.3-70b-versatile)…
+2026-06-08 03:17:25,959 [INFO] httpx — HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:17:29,401 [INFO] retrieve — Retrieved 4 chunks. Best: dist=0.024, source='unesco_rd_2026.txt'
+2026-06-08 03:17:29,401 [INFO] generate — Generating with Groq (llama-3.3-70b-versatile)…
+2026-06-08 03:17:30,929 [INFO] httpx — HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:17:30,931 [INFO] generate — Answer generated. Sources cited: ['unesco_rd_2026.txt']

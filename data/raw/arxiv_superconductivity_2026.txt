@@ -1,0 +1,15 @@
+arXiv Preprint Repository — Condensed Matter Physics (cond-mat)
+arXiv:2026.04471v1 [cond-mat.supr-con]
+
+Title: Room-Temperature Superconductivity in Hydrogen-Rich Lanthanum–Cerium Ternary Hydrides at Near-Ambient Pressure
+
+Abstract:
+We report experimental evidence of superconducting behaviour at 294 K (21°C) in a series of lanthanum-cerium ternary hydrides synthesised under moderate pressure conditions (18–22 GPa). Electrical resistance measurements show a complete zero-resistance state onset at approximately 291 K, confirmed by the Meissner effect in magnetic susceptibility measurements. The critical current density exceeds 10^5 A/cm² at 290 K, suggesting potential viability for practical applications.
+
+The materials were synthesised via laser-heated diamond anvil cell techniques. X-ray diffraction patterns confirm a novel clathrate-type cage structure with hydrogen occupying interstitial sites at a density not previously reported for hydride systems at pressures below 25 GPa.
+
+These findings build on theoretical predictions from DFT calculations that identified hydrogen-rich ternary systems as candidates for elevated Tc superconductivity. While prior work on binary lanthanum hydrides required pressures exceeding 150 GPa, the cerium co-doping appears to reduce the pressure requirement substantially.
+
+We acknowledge that the current synthesis route requires pressures still above ambient atmospheric conditions, limiting immediate commercialisation. Independent replication of these results is ongoing at three partner institutions. Authors note that the ternary hydride compounds require careful handling; full safety characterisation including long-term inhalation and dermal exposure data is not yet available.
+
+Submitted: February 2026. This preprint has not been peer-reviewed.

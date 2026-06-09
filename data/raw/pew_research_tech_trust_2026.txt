@@ -1,0 +1,27 @@
+Pew Research Center — Technology Trust Survey 2026
+Americans' Views on Artificial Intelligence, Digital Innovation, and Technology Companies
+
+Published: January 2026 | Survey fielded: October–November 2025 | n = 5,115 US adults
+
+EXECUTIVE SUMMARY
+
+Public trust in technological innovation has declined across most demographic groups since 2024, with concerns about artificial intelligence driving the sharpest drops in confidence. Overall, 47% of US adults say they trust technology companies to act in the public interest "not much" or "not at all" — a 9-percentage-point increase from 38% in 2024.
+
+TRUST IN AI-GENERATED INFORMATION
+
+The 2026 survey found that 54% of US adults trust AI-generated information "not at all" or "not very much," a 12-point increase from the 42% who expressed distrust in 2024. The primary drivers cited by respondents who expressed distrust were:
+1. Concern about AI-generated misinformation in news contexts (cited by 71% of distrustful respondents)
+2. Inability to verify the source or accuracy of AI outputs (58%)
+3. Belief that AI companies prioritise profit over accuracy (52%)
+
+DEMOGRAPHIC BREAKDOWN
+
+Trust was lowest among adults aged 18-29, with 62% expressing distrust in AI-generated information, compared to 41% among adults over 65. College-educated adults were more likely to distrust AI outputs (57%) than those without a college degree (51%).
+
+Partisan differences were pronounced: 64% of Republicans expressed distrust in AI-generated content, compared to 46% of Democrats and 52% of Independents.
+
+TECHNOLOGICAL INNOVATION SENTIMENT
+
+When asked whether technological innovation over the past decade has made their lives better or worse, 41% said better, 28% said worse, and 31% said it has not made much difference. This represents a shift from 2022, when 54% said technology had made their lives better.
+
+Trust in technology companies specifically to "develop AI responsibly" stood at 21% (a great deal or fair amount), down from 31% in 2024.
