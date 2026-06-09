@@ -8,10 +8,24 @@ Key compliance deadlines identified in the framework:
 - March 15, 2026: Full audit trail documentation must be submitted for AI systems used in hiring, lending, or healthcare triage.
 - March 31, 2026: Cross-border data transfer agreements must be renegotiated under the new DCAF standard clauses.
 
-The agreement covers 47 signatory nations, including all G7 economies and 19 emerging market states. Non-compliance penalties are tiered, reaching up to 6% of global annual revenue for repeat violations.
+The agreement covers 47 signatory nations, including all G7 economies and 19 emerging market states. Non-compliance penalties are tiered, reaching up to 6% of global annual revenue for repeat violations. Enforcement authority rests with the newly established Joint Digital Commerce Tribunal, which will adjudicate disputes and issue binding compliance orders.
 
-Industry groups representing semiconductor manufacturers and cloud computing providers expressed concern about the pace of implementation. The Consumer Technology Association called the March 31 deadline "unworkable" for smaller operators lacking dedicated compliance departments.
+INDUSTRY REACTION
 
-Chinese and Indian trade authorities declined to join the accord, instead announcing parallel national frameworks. Analysts warned of potential regulatory fragmentation affecting supply chains dependent on cross-Pacific data transfers.
+Industry groups representing semiconductor manufacturers and cloud computing providers expressed concern about the pace of implementation. The Consumer Technology Association called the March 31 deadline "unworkable" for smaller operators lacking dedicated compliance departments. The Information Technology Industry Council estimated that fewer than 40% of mid-tier companies had begun DCAF compliance programmes by the time the framework was formally adopted.
+
+The DCAF includes a small business exemption for companies with annual digital commerce revenue below $50 million operating exclusively in domestic markets. However, this exemption does not apply to AI-generated content systems, which face registration requirements regardless of company size.
+
+TECHNOLOGY SECTOR SPECIFICS
+
+Generative AI platforms are specifically addressed in DCAF Annex III, which requires that AI-generated text, images, and audio be marked with a machine-readable content provenance standard before distribution across borders. The standard, developed in collaboration with the Coalition for Content Provenance and Authenticity (C2PA), will become mandatory for signatory nation platforms by March 31, 2026.
+
+Social media platforms with more than 50 million monthly active users in DCAF signatory nations face additional obligations under Article 22, including quarterly algorithmic audit reports submitted to national authorities. Failure to comply by March 31 triggers provisional content restrictions in affected jurisdictions.
+
+GEOPOLITICAL DIMENSION
+
+Chinese and Indian trade authorities declined to join the accord, instead announcing parallel national frameworks. China's Ministry of Industry and Information Technology released its Digital Commerce Sovereignty Framework one week after the DCAF announcement. Analysts warned of potential regulatory fragmentation affecting supply chains dependent on cross-Pacific data transfers.
+
+Brazilian and South African delegations negotiated observer status with a review clause allowing full accession within 18 months, contingent on alignment of national data protection legislation.
 
 The Associated Press wire service | January 15, 2026

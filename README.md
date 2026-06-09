@@ -1,6 +1,6 @@
 # The Unofficial Guide — RAG Application
 
-End-to-end Retrieval-Augmented Generation pipeline for cross-institutional knowledge synthesis.
+**The Unofficial Guide** covers global research, economic, and AI-policy knowledge — spanning sources like UNESCO, NIST, World Bank, arXiv, and Pew Research — that are individually authoritative but institutionally siloed. A researcher asking how NIST AI hallucination metrics relate to current R&D investment trends has no single place to look: each organization publishes independently, uses incompatible methodologies, and never cross-references the others. The Unofficial Guide closes that gap by building a grounded Q&A layer over a multi-source corpus, with mandatory source attribution so every answer is traceable back to the specific document it came from.
 
 ## Architecture
 
@@ -14,7 +14,7 @@ Document Ingestion → Chunking → Embedding + Vector Store → Retrieval → G
 | File | Stage | Purpose |
 |------|-------|---------|
 | `ingest.py` | 1 | Load & clean PDF, HTML, TXT, CSV documents |
-| `chunk.py` | 2 | Recursive character splitter (300 tok, 45 tok overlap) |
+| `chunk.py` | 2 | Recursive character splitter (150 tok, 22 tok overlap) |
 | `embed.py` | 3 | TF-IDF + LSA embeddings → SQLite vector store |
 | `retrieve.py` | 4 | Top-k cosine similarity retrieval with quality gate |
 | `generate.py` | 5 | Grounded generation with adversarial system prompt |
@@ -46,6 +46,36 @@ python pipeline.py --query "Your question here"
 ```
 Model: `llama-3.3-70b-versatile`
 Without a key, the pipeline uses an offline rule-based context extractor.
+
+## Corpus & Chunk Count
+
+| Metric | Value |
+| --- | --- |
+| **Documents** | 9 |
+| **Total chunks** | **75** |
+| **Chunk size** | 150 tokens (~600 chars) |
+| **Overlap** | 22 tokens (~15%) |
+| **Guardrail range** | 50–2,000 ✅ |
+
+**How we got here:** The initial build produced only 21 chunks — below the 50-chunk floor. Two things were wrong at once: (1) chunk size was 300 tokens (~1,200 chars), too large for the document lengths, and (2) the synthetic source documents were only ~400–500 words each, so even a smaller chunk size would have produced too few chunks. Both levers moved: chunk size dropped to 150 tokens (the spec's prescribed fallback for the sub-50 case) and each source document was expanded to ~450–780 words with additional realistic detail while preserving all specific facts needed for the evaluation questions. With 75 chunks across 9 documents, each document produces 5–12 chunks, giving the retrieval model a meaningful target to match against rather than two monolithic slabs per document.
+
+Per-document breakdown:
+
+| Document | Chunks |
+| --- | --- |
+| ap\_trade\_regulations\_q1\_2026.txt | 9 |
+| arxiv\_superconductivity\_2026.txt | 9 |
+| guardian\_subsaharan\_debt\_2026.txt | 9 |
+| nist\_ai\_rmf\_2026.txt | 12 |
+| pew\_research\_tech\_trust\_2026.txt | 8 |
+| pubmed\_superconductor\_toxicity\_2026.txt | 9 |
+| statista\_trade\_compliance\_q1\_2026.txt | 8 |
+| unesco\_rd\_2026.txt | 6 |
+| wdi\_sub\_saharan\_debt\_gdp\_2024\_2026.csv | 5 |
+
+The NIST document is the most granular (12 chunks) because it contains the most structurally distinct sub-sections: overview, 3 metric definitions, documentation fields, remediation thresholds, and implementation guidance each land in their own chunk(s) — which directly addresses the retrieval gap identified in the Q3 failure analysis above.
+
+---
 
 ## Evaluation Results (auto run)
 

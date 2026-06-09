@@ -28,11 +28,25 @@ Key compliance deadlines identified in the framework:
 - March 15, 2026: Full audit trail documentation must be submitted for AI systems used in hiring, lending, or healthcare triage.
 - March 31, 2026: Cross-border data transfer agreements must be renegotiated under the new DCAF standard clauses.
 
-The agreement covers 47 signatory nations, including all G7 economies and 19 emerging market states. Non-compliance penalties are tiered, reaching up to 6% of global annual revenue for repeat violations.
+The agreement covers 47 signatory nations, including all G7 economies and 19 emerging market states. Non-compliance penalties are tiered, reaching up to 6% of global annual revenue for repeat violations. Enforcement authority rests with the newly established Joint Digital Commerce Tribunal, which will adjudicate disputes and issue binding compliance orders.
 
-Industry groups representing semiconductor manufacturers and cloud computing providers expressed concern about the pace of implementation. The Consumer Technology Association called the March 31 deadline "unworkable" for smaller operators lacking dedicated compliance departments.
+INDUSTRY REACTION
 
-Chinese and Indian trade authorities declined to join the accord, instead announcing parallel national frameworks. Analysts warned of potential regulatory fragmentation affecting supply chains dependent on cross-Pacific data transfers.
+Industry groups representing semiconductor manufacturers and cloud computing providers expressed concern about the pace of implementation. The Consumer Technology Association called the March 31 deadline "unworkable" for smaller operators lacking dedicated compliance departments. The Information Technology Industry Council estimated that fewer than 40% of mid-tier companies had begun DCAF compliance programmes by the time the framework was formally adopted.
+
+The DCAF includes a small business exemption for companies with annual digital commerce revenue below $50 million operating exclusively in domestic markets. However, this exemption does not apply to AI-generated content systems, which face registration requirements regardless of company size.
+
+TECHNOLOGY SECTOR SPECIFICS
+
+Generative AI platforms are specifically addressed in DCAF Annex III, which requires that AI-generated text, images, and audio be marked with a machine-readable content provenance standard before distribution across borders. The standard, developed in collaboration with the Coalition for Content Provenance and Authenticity (C2PA), will become mandatory for signatory nation platforms by March 31, 2026.
+
+Social media platforms with more than 50 million monthly active users in DCAF signatory nations face additional obligations under Article 22, including quarterly algorithmic audit reports submitted to national authorities. Failure to comply by March 31 triggers provisional content restrictions in affected jurisdictions.
+
+GEOPOLITICAL DIMENSION
+
+Chinese and Indian trade authorities declined to join the accord, instead announcing parallel national frameworks. China's Ministry of Industry and Information Technology released its Digital Commerce Sovereignty Framework one week after the DCAF announcement. Analysts warned of potential regulatory fragmentation affecting supply chains dependent on cross-Pacific data transfers.
+
+Brazilian and South African delegations negotiated observer status with a review clause allowing full accession within 18 months, contingent on alignment of national data protection legislation.
 
 The Associated Press wire service | January 15, 2026
 """,
@@ -49,6 +63,20 @@ Economists at the African Development Bank have pointed to three converging forc
 Climate-related fiscal stress adds another dimension. Countries in the Sahel and coastal West Africa are diverting budgetary resources to disaster response and infrastructure repair that would otherwise service existing debt. The Guardian has reported previously on how Mozambique's repeated cyclone recovery costs have crowded out social spending.
 
 Development economists have increasingly called for a structured multilateral debt relief mechanism specific to climate-vulnerable low-income countries, arguing that conventional IMF conditionality is poorly suited to economies facing structural climate shocks rather than policy-induced fiscal crises.
+
+COUNTRY CASE STUDIES
+
+Zambia's debt restructuring negotiations dragged into a fourth year in 2025, with external creditors — including a significant bloc of Chinese commercial lenders — failing to agree on a common framework for haircuts. The kwacha's depreciation against the US dollar added roughly 12 percentage points to Zambia's effective debt-to-GDP ratio between 2024 and 2026 when measured in local currency terms. IMF Article IV consultations in late 2025 flagged Zambia as carrying one of the highest debt servicing burdens on the continent.
+
+Ghana, having entered an IMF Extended Credit Facility programme in 2023, was managing Eurobond rollover pressures through the review period. The programme's fiscal consolidation targets required primary surplus maintenance while simultaneously servicing elevated external debt stock, a balance economists at the University of Ghana's Institute of Statistical, Social and Economic Research described as "arithmetically fragile."
+
+Kenya's infrastructure-heavy budget, anchored to port expansion and standard gauge railway maintenance costs, required successive supplementary appropriations in 2025. Drought emergency declarations in northern counties added unbudgeted climate-related expenditure, contributing to Kenya's debt-to-GDP increase of 7.5 percentage points between 2024 and 2026.
+
+IMF RESPONSE
+
+The Fund's October 2025 Regional Economic Outlook for Sub-Saharan Africa identified seventeen economies in the region as being at high risk of debt distress or already in distress. The report recommended accelerated implementation of the G20 Common Framework for Debt Treatments but acknowledged that the framework's voluntary and case-by-case structure had produced slow progress since its introduction in 2020.
+
+The Guardian | March 2026
 """,
 
     # ── Scientific & Academic Research ────────────────────────────────────────
@@ -62,11 +90,21 @@ Title: Room-Temperature Superconductivity in Hydrogen-Rich Lanthanum–Cerium Te
 Abstract:
 We report experimental evidence of superconducting behaviour at 294 K (21°C) in a series of lanthanum-cerium ternary hydrides synthesised under moderate pressure conditions (18–22 GPa). Electrical resistance measurements show a complete zero-resistance state onset at approximately 291 K, confirmed by the Meissner effect in magnetic susceptibility measurements. The critical current density exceeds 10^5 A/cm² at 290 K, suggesting potential viability for practical applications.
 
-The materials were synthesised via laser-heated diamond anvil cell techniques. X-ray diffraction patterns confirm a novel clathrate-type cage structure with hydrogen occupying interstitial sites at a density not previously reported for hydride systems at pressures below 25 GPa.
+EXPERIMENTAL METHODS
 
-These findings build on theoretical predictions from DFT calculations that identified hydrogen-rich ternary systems as candidates for elevated Tc superconductivity. While prior work on binary lanthanum hydrides required pressures exceeding 150 GPa, the cerium co-doping appears to reduce the pressure requirement substantially.
+The materials were synthesised via laser-heated diamond anvil cell (LHDAC) techniques. Precursor lanthanum and cerium metals (purity 99.9%) were loaded into rhenium gasket cells with a 150 μm diameter culet. Hydrogen was introduced via cryogenic H₂ gas loading at 0.2 GPa. Cells were laser-heated to approximately 1800 K at target pressures, inducing solid-state reaction between the metal and hydrogen to form the hydride phase.
 
-We acknowledge that the current synthesis route requires pressures still above ambient atmospheric conditions, limiting immediate commercialisation. Independent replication of these results is ongoing at three partner institutions. Authors note that the ternary hydride compounds require careful handling; full safety characterisation including long-term inhalation and dermal exposure data is not yet available.
+X-ray diffraction patterns collected at beamline 12.2.2 of the Advanced Light Source confirm a novel clathrate-type cage structure with hydrogen occupying interstitial sites at a density not previously reported for hydride systems at pressures below 25 GPa. The La₀.₇Ce₀.₃H₁₀ stoichiometry exhibited the highest observed Tc in this series, with the transition temperature dropping to 261 K in the La₀.₅Ce₀.₅H₁₀ variant.
+
+THEORETICAL CONTEXT
+
+These findings build on theoretical predictions from density functional theory (DFT) calculations that identified hydrogen-rich ternary systems as candidates for elevated Tc superconductivity. While prior work on binary lanthanum hydrides (LaH₁₀) required pressures exceeding 150 GPa to achieve superconductivity above 250 K, the cerium co-doping appears to reduce the pressure requirement substantially. The mechanism is attributed to charge transfer from Ce 4f states modifying the phonon density of states at the Fermi level, consistent with McMillan–Allen–Dynes strong-coupling theory predictions.
+
+Electron-phonon coupling constants λ extracted from tunnelling spectroscopy measurements are in the range 2.1–2.4 for the highest-Tc compositions, significantly above the conventional weak-coupling regime.
+
+LIMITATIONS AND SAFETY NOTES
+
+We acknowledge that the current synthesis route requires pressures still above ambient atmospheric conditions, limiting immediate commercialisation. Independent replication of these results is ongoing at three partner institutions, including the Max Planck Institute for Chemistry and the University of Edinburgh. Authors note that the ternary hydride compounds require careful handling; full safety characterisation including long-term inhalation and dermal exposure data is not yet available. Researchers working with these materials are advised to follow institutional biosafety protocols for novel nanomaterials pending peer-reviewed toxicological assessment.
 
 Submitted: February 2026. This preprint has not been peer-reviewed.
 """,
@@ -83,11 +121,21 @@ Published: March 2026
 Abstract:
 Lanthanum and cerium compounds are classified as rare earth elements with established occupational health risks. This systematic review consolidates current peer-reviewed evidence on the toxicological profiles of lanthanum hydride (LaH₁₀), cerium hydride (CeH₉), and ternary lanthanum-cerium hydride systems, with reference to emerging synthesis routes reported in the preprint literature.
 
-Lanthanum compounds: Occupational studies in rare earth mining and processing facilities consistently document pulmonary granulomatosis following chronic inhalation exposure. LaH compounds are not specifically studied, but lanthanide-based pneumoconiosis is well-characterised. IARC classifies cerium compounds as Group 2B (possibly carcinogenic to humans) based on limited animal evidence. No human carcinogenicity data are available for the specific LaH₁₀ phase.
+REGULATORY CLASSIFICATION
 
-Cerium hydrides: The literature documents cytotoxicity in vitro at concentrations above 50 μg/mL, primarily through oxidative stress mechanisms. CeO₂ nanoparticles, while chemically distinct, exhibit hepatotoxicity in rodent models at doses relevant to occupational inhalation scenarios.
+IARC classifies cerium compounds as Group 2B (possibly carcinogenic to humans) based on limited animal evidence from chronic inhalation studies. No human carcinogenicity data are available for the specific LaH₁₀ phase or for ternary lanthanum-cerium hydride compounds. The Group 2B classification applies to cerium oxide and cerium sulphate; its applicability to hydride phases is inferred but not confirmed by direct experimental evidence. Lanthanum compounds are not currently classified by IARC but are under review following the publication of new occupational exposure studies in rare earth processing facilities in China, Australia, and Brazil.
+
+COMPOUND-SPECIFIC TOXICOLOGY
+
+Lanthanum compounds: Occupational studies in rare earth mining and processing facilities consistently document pulmonary granulomatosis following chronic inhalation exposure. LaH compounds are not specifically studied, but lanthanide-based pneumoconiosis is well-characterised in workers exposed to mixed rare earth oxide dusts at concentrations above 1 mg/m³ over multi-year periods. The available evidence does not establish a no-observed-adverse-effect level (NOAEL) for lanthanum hydride inhalation.
+
+Cerium hydrides: The literature documents cytotoxicity in vitro at concentrations above 50 μg/mL, primarily through oxidative stress mechanisms. CeO₂ nanoparticles, while chemically distinct, exhibit hepatotoxicity in rodent models at doses relevant to occupational inhalation scenarios. The cerium hydride literature is predominantly based on CeH₂ and CeH₃ precursors; the higher hydride phases relevant to room-temperature superconductivity synthesis (CeH₉, CeH₁₀) have no published toxicological profiles.
 
 Ternary hydrides: The peer-reviewed literature contains no long-term exposure studies specific to lanthanum-cerium ternary hydride compounds. Preprint claims of practical synthesis routes increase the urgency of safety characterisation. The authors note that the extreme reactivity of hydrogen-rich hydrides under ambient conditions — including risk of spontaneous decomposition — presents safety challenges distinct from those of stable lanthanum or cerium oxides.
+
+OCCUPATIONAL EXPOSURE LIMITS
+
+No national or international occupational exposure limit (OEL) has been established specifically for LaH₁₀, CeH₉, or ternary lanthanum-cerium hydride compounds. The absence of published OELs means that laboratories working with these materials have no regulatory benchmark for air monitoring. In the absence of compound-specific OELs, researchers are advised to apply the ACGIH TLV-TWA for insoluble rare earth compounds (1 mg/m³, as lanthanide) as a provisional maximum, with the acknowledgement that this limit was not derived from hydride-specific toxicity data.
 
 Conclusions: Current peer-reviewed evidence is insufficient to establish safe occupational exposure limits for LaH₁₀ or related ternary hydride compounds. Until inhalation toxicology, reproductive toxicology, and chronic exposure data are available through peer-reviewed channels, these materials should be handled under BSL-equivalent containment protocols for unknown hazard materials.
 """,
@@ -132,7 +180,17 @@ The data indicate a widening investment gap between high-income and low-income e
 
 Artificial intelligence-related R&D is estimated to constitute approximately 18% of total global R&D expenditure in the private sector in 2025, up from 11% in 2022. Public sector AI R&D investment is more modest, averaging 4.2% of national R&D budgets among reporting nations.
 
-Data collection methodology: The UIS collects R&D expenditure data through national statistical offices following the OECD Frascati Manual framework. All figures are reported in purchasing power parity (PPP) adjusted constant 2017 USD.
+SECTORAL BREAKDOWN
+
+Business enterprise R&D (BERD) accounts for 67% of global R&D expenditure in 2025, government-funded R&D (GOVERD) accounts for 11%, and higher education R&D (HERD) accounts for 19%. The remaining 3% is funded by private non-profit organisations. This breakdown has been broadly stable since 2018, though the private sector share increased by 4 percentage points between 2020 and 2025, driven primarily by large technology firms in the United States, China, and South Korea.
+
+R&D PERSONNEL
+
+Global R&D personnel (full-time equivalent) reached 9.8 million in 2025, up 12% from 2020. Researcher density (researchers per million inhabitants) varies dramatically: 8,342 in South Korea, 6,981 in Israel, 4,412 in the United States, 1,307 in China, 218 in Brazil, and 42 in Sub-Saharan Africa (excluding South Africa). The gender gap in R&D participation persists globally, with women accounting for 33% of researchers worldwide and only 19% in East Asia.
+
+METHODOLOGY
+
+Data collection methodology: The UIS collects R&D expenditure data through national statistical offices following the OECD Frascati Manual framework. All figures are reported in purchasing power parity (PPP) adjusted constant 2017 USD. Nations reporting data to UIS covered 94% of estimated global R&D activity in this release cycle. Figures for non-reporting nations are estimated using econometric imputation based on GDP, education enrolment, and patent application rates.
 """,
 
     "pew_research_tech_trust_2026.txt": """
@@ -162,7 +220,19 @@ TECHNOLOGICAL INNOVATION SENTIMENT
 
 When asked whether technological innovation over the past decade has made their lives better or worse, 41% said better, 28% said worse, and 31% said it has not made much difference. This represents a shift from 2022, when 54% said technology had made their lives better.
 
-Trust in technology companies specifically to "develop AI responsibly" stood at 21% (a great deal or fair amount), down from 31% in 2024.
+Trust in technology companies specifically to "develop AI responsibly" stood at 21% (a great deal or fair amount), down from 31% in 2024 and 44% in 2021.
+
+SECTOR-SPECIFIC TRUST FINDINGS
+
+Respondents were asked to rate trust in AI applications across six domains. Healthcare AI (AI systems used to assist in medical diagnosis or treatment planning) retained the highest trust, with 38% expressing at least a fair amount of trust — though this too declined from 49% in 2024. AI in financial services (credit scoring, fraud detection) earned trust from 29% of respondents. AI in news and journalism garnered only 11% trust, the lowest of any measured domain.
+
+METHODOLOGY
+
+The survey was conducted online and by telephone among a nationally representative sample of 5,115 US adults ages 18 and older. The sample was weighted to be representative of the adult US population by age, gender, education, race and ethnicity, and region. The margin of sampling error is plus or minus 1.6 percentage points at the 95% confidence level for the full sample. Responses were collected from October 7 to November 3, 2025.
+
+LONGITUDINAL COMPARISON
+
+Trust in technology companies to act in the public interest "not much" or "not at all": 2021: 29%, 2022: 32%, 2023: 35%, 2024: 38%, 2025/2026 survey: 47%. This five-year trend represents a cumulative 18-point decline in public trust, the steepest sustained decline recorded in any sector in Pew's annual trust series.
 """,
 
     "statista_trade_compliance_q1_2026.txt": """
@@ -193,6 +263,14 @@ COMPLIANCE COST ESTIMATES (Statista Research Division)
 - Average compliance cost for mid-tier companies ($1B–$10B revenue): $8.3M per company
 - Estimated total global compliance spend: $2.4B across signatory jurisdictions
 
+SECTOR COMPLIANCE TRACKER (as of January 15, 2026)
+
+Financial services sector: 71% of in-scope institutions have initiated DCAF compliance programmes. The sector's existing audit-trail infrastructure from Basel III and MiFID II compliance has been repurposed for AI system documentation requirements, reducing estimated compliance costs by 30–40% relative to sectors with no prior audit infrastructure.
+
+Healthcare technology: 43% compliance readiness rate. The March 15 deadline for audit trail documentation of AI systems used in healthcare triage is expected to be missed by a significant minority of smaller providers. The US Department of Health and Human Services issued supplementary guidance on January 12, 2026 clarifying that electronic health record systems with embedded AI triage features are subject to the deadline.
+
+Recruitment technology: Lowest readiness rate at 31%. Many hiring platform operators were unaware that automated screening and ranking tools fell within the DCAF's definition of "AI systems used in hiring" until the December 2025 implementing guidance was published.
+
 Source: Statista Digital Regulation Database, official DCAF regulatory texts, national regulatory authority public filings.
 """,
 
@@ -208,6 +286,8 @@ SECTION 4: MEASUREMENT AND EVALUATION OF GENERATIVE AI HALLUCINATIONS
 4.1 Overview
 
 The 2026 update to the NIST AI Risk Management Framework introduces a standardised set of metrics for evaluating the tendency of generative AI systems to produce outputs that are ungrounded, factually incorrect, or unsupported by source documentation. These metrics apply to any generative AI system deployed in a context where factual accuracy is a material concern, including but not limited to: legal document summarisation, medical information retrieval, financial analysis, and government information services.
+
+Organisations deploying generative AI systems in high-stakes contexts are required to implement a structured evaluation programme prior to production deployment and at defined intervals thereafter. The evaluation programme must address all three prescribed metrics and maintain the documentation records specified in Section 4.3.
 
 4.2 Prescribed Metrics
 
@@ -227,20 +307,29 @@ Measurement procedure: Construct an adversarial test set of queries known to be 
 
 4.3 Documentation Requirements
 
-Organisations must maintain a structured audit trail for all hallucination evaluation runs. Required fields:
-- System identifier and version number
-- Evaluation dataset name and cryptographic hash (SHA-256)
-- Evaluation date and evaluator identity (human or automated system name/version)
-- Per-metric scores: FAR, GS, RROSQ
-- Number of claims evaluated and proportion labelled Uncertain
-- Comparison to prior evaluation run (delta scores)
-- Any remediation actions taken in response to below-threshold scores
+Organisations must maintain a structured audit trail for all hallucination evaluation runs. The audit trail serves as the primary evidence of compliance with Section 4 requirements and must be available for inspection by authorised auditors within 10 business days of a request.
+
+Required fields for each evaluation run record:
+- System identifier: a unique string identifying the AI system version under evaluation (e.g., model name, version number, deployment configuration hash)
+- Evaluation dataset name and cryptographic hash: the SHA-256 hash of the evaluation dataset file, ensuring the dataset cannot be retroactively altered
+- Evaluation date: the calendar date on which the evaluation was conducted, in ISO 8601 format
+- Evaluator identity: the name or identifier of the human evaluator or automated system used to assess claim grounding
+- Per-metric scores: the numerical results for FAR, GS, and RROSQ for this evaluation run
+- Number of claims evaluated: total count of discrete claims assessed, with a breakdown of Grounded, Ungrounded, and Uncertain labels
+- Delta scores: comparison of per-metric scores to the immediately preceding evaluation run, expressed as signed numeric differences
+- Remediation actions: a free-text description of any corrective actions taken in response to below-threshold scores, or "None" if all thresholds were met
 
 Audit trail records must be retained for a minimum of 3 years and made available to regulatory authorities upon request within 10 business days.
 
 4.4 Remediation Thresholds
 
 If FAR falls below 0.85 or RROSQ falls below 0.90, the system must be taken offline from production use until the deficiency is corrected and re-evaluation confirms compliance. Systems with GS below 0.65 must display a user-facing warning indicating that outputs may not be fully grounded in provided source materials.
+
+4.5 Implementation Guidance
+
+Organisations are advised to integrate hallucination evaluation into their existing model lifecycle management processes. Evaluation runs should be triggered by the following events, at minimum: initial pre-production deployment, any update to the underlying model weights or retrieval corpus, any change to the system prompt or generation parameters, and quarterly scheduled evaluations for production systems.
+
+Automated evaluation pipelines using LLM-as-judge approaches for claim verification are acceptable under this framework, provided the judge model's own FAR on a held-out ground-truth set is documented and exceeds 0.88. Manual evaluation by trained human assessors remains the gold standard for regulated industries.
 """,
 
 }
@@ -253,7 +342,7 @@ def seed_corpus(data_dir: str = str(DATA_DIR)) -> None:
         path = Path(data_dir) / filename
         with open(path, "w", encoding="utf-8") as f:
             f.write(content.strip())
-        print(f"  ✓ Written: {filename} ({len(content.split())} words)")
+        print(f"  Written: {filename} ({len(content.split())} words)")
     print(f"\nCorpus seeded: {len(CORPUS)} documents in '{data_dir}'")
 
 

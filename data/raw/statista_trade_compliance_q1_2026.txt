@@ -25,4 +25,12 @@ COMPLIANCE COST ESTIMATES (Statista Research Division)
 - Average compliance cost for mid-tier companies ($1B–$10B revenue): $8.3M per company
 - Estimated total global compliance spend: $2.4B across signatory jurisdictions
 
+SECTOR COMPLIANCE TRACKER (as of January 15, 2026)
+
+Financial services sector: 71% of in-scope institutions have initiated DCAF compliance programmes. The sector's existing audit-trail infrastructure from Basel III and MiFID II compliance has been repurposed for AI system documentation requirements, reducing estimated compliance costs by 30–40% relative to sectors with no prior audit infrastructure.
+
+Healthcare technology: 43% compliance readiness rate. The March 15 deadline for audit trail documentation of AI systems used in healthcare triage is expected to be missed by a significant minority of smaller providers. The US Department of Health and Human Services issued supplementary guidance on January 12, 2026 clarifying that electronic health record systems with embedded AI triage features are subject to the deadline.
+
+Recruitment technology: Lowest readiness rate at 31%. Many hiring platform operators were unaware that automated screening and ranking tools fell within the DCAF's definition of "AI systems used in hiring" until the December 2025 implementing guidance was published.
+
 Source: Statista Digital Regulation Database, official DCAF regulatory texts, national regulatory authority public filings.

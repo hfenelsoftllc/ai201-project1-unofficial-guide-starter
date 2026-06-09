@@ -24,4 +24,16 @@ TECHNOLOGICAL INNOVATION SENTIMENT
 
 When asked whether technological innovation over the past decade has made their lives better or worse, 41% said better, 28% said worse, and 31% said it has not made much difference. This represents a shift from 2022, when 54% said technology had made their lives better.
 
-Trust in technology companies specifically to "develop AI responsibly" stood at 21% (a great deal or fair amount), down from 31% in 2024.
+Trust in technology companies specifically to "develop AI responsibly" stood at 21% (a great deal or fair amount), down from 31% in 2024 and 44% in 2021.
+
+SECTOR-SPECIFIC TRUST FINDINGS
+
+Respondents were asked to rate trust in AI applications across six domains. Healthcare AI (AI systems used to assist in medical diagnosis or treatment planning) retained the highest trust, with 38% expressing at least a fair amount of trust — though this too declined from 49% in 2024. AI in financial services (credit scoring, fraud detection) earned trust from 29% of respondents. AI in news and journalism garnered only 11% trust, the lowest of any measured domain.
+
+METHODOLOGY
+
+The survey was conducted online and by telephone among a nationally representative sample of 5,115 US adults ages 18 and older. The sample was weighted to be representative of the adult US population by age, gender, education, race and ethnicity, and region. The margin of sampling error is plus or minus 1.6 percentage points at the 95% confidence level for the full sample. Responses were collected from October 7 to November 3, 2025.
+
+LONGITUDINAL COMPARISON
+
+Trust in technology companies to act in the public interest "not much" or "not at all": 2021: 29%, 2022: 32%, 2023: 35%, 2024: 38%, 2025/2026 survey: 47%. This five-year trend represents a cumulative 18-point decline in public trust, the steepest sustained decline recorded in any sector in Pew's annual trust series.

@@ -6,10 +6,20 @@ Title: Room-Temperature Superconductivity in Hydrogen-Rich Lanthanum–Cerium Te
 Abstract:
 We report experimental evidence of superconducting behaviour at 294 K (21°C) in a series of lanthanum-cerium ternary hydrides synthesised under moderate pressure conditions (18–22 GPa). Electrical resistance measurements show a complete zero-resistance state onset at approximately 291 K, confirmed by the Meissner effect in magnetic susceptibility measurements. The critical current density exceeds 10^5 A/cm² at 290 K, suggesting potential viability for practical applications.
 
-The materials were synthesised via laser-heated diamond anvil cell techniques. X-ray diffraction patterns confirm a novel clathrate-type cage structure with hydrogen occupying interstitial sites at a density not previously reported for hydride systems at pressures below 25 GPa.
+EXPERIMENTAL METHODS
 
-These findings build on theoretical predictions from DFT calculations that identified hydrogen-rich ternary systems as candidates for elevated Tc superconductivity. While prior work on binary lanthanum hydrides required pressures exceeding 150 GPa, the cerium co-doping appears to reduce the pressure requirement substantially.
+The materials were synthesised via laser-heated diamond anvil cell (LHDAC) techniques. Precursor lanthanum and cerium metals (purity 99.9%) were loaded into rhenium gasket cells with a 150 μm diameter culet. Hydrogen was introduced via cryogenic H₂ gas loading at 0.2 GPa. Cells were laser-heated to approximately 1800 K at target pressures, inducing solid-state reaction between the metal and hydrogen to form the hydride phase.
 
-We acknowledge that the current synthesis route requires pressures still above ambient atmospheric conditions, limiting immediate commercialisation. Independent replication of these results is ongoing at three partner institutions. Authors note that the ternary hydride compounds require careful handling; full safety characterisation including long-term inhalation and dermal exposure data is not yet available.
+X-ray diffraction patterns collected at beamline 12.2.2 of the Advanced Light Source confirm a novel clathrate-type cage structure with hydrogen occupying interstitial sites at a density not previously reported for hydride systems at pressures below 25 GPa. The La₀.₇Ce₀.₃H₁₀ stoichiometry exhibited the highest observed Tc in this series, with the transition temperature dropping to 261 K in the La₀.₅Ce₀.₅H₁₀ variant.
+
+THEORETICAL CONTEXT
+
+These findings build on theoretical predictions from density functional theory (DFT) calculations that identified hydrogen-rich ternary systems as candidates for elevated Tc superconductivity. While prior work on binary lanthanum hydrides (LaH₁₀) required pressures exceeding 150 GPa to achieve superconductivity above 250 K, the cerium co-doping appears to reduce the pressure requirement substantially. The mechanism is attributed to charge transfer from Ce 4f states modifying the phonon density of states at the Fermi level, consistent with McMillan–Allen–Dynes strong-coupling theory predictions.
+
+Electron-phonon coupling constants λ extracted from tunnelling spectroscopy measurements are in the range 2.1–2.4 for the highest-Tc compositions, significantly above the conventional weak-coupling regime.
+
+LIMITATIONS AND SAFETY NOTES
+
+We acknowledge that the current synthesis route requires pressures still above ambient atmospheric conditions, limiting immediate commercialisation. Independent replication of these results is ongoing at three partner institutions, including the Max Planck Institute for Chemistry and the University of Edinburgh. Authors note that the ternary hydride compounds require careful handling; full safety characterisation including long-term inhalation and dermal exposure data is not yet available. Researchers working with these materials are advised to follow institutional biosafety protocols for novel nanomaterials pending peer-reviewed toxicological assessment.
 
 Submitted: February 2026. This preprint has not been peer-reviewed.

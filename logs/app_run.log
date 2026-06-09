@@ -58,3 +58,6 @@
 2026-06-08 03:17:29,401 [INFO] generate — Generating with Groq (llama-3.3-70b-versatile)…
 2026-06-08 03:17:30,929 [INFO] httpx — HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-06-08 03:17:30,931 [INFO] generate — Answer generated. Sources cited: ['unesco_rd_2026.txt']
+2026-06-08 15:57:05,513 [INFO] retrieve — Retrieved 4 chunks. Best: dist=0.490, source='ap_trade_regulations_q1_2026.txt'
+2026-06-08 15:57:05,515 [INFO] generate — Generating with Groq (llama-3.3-70b-versatile)…
+2026-06-08 15:57:07,107 [INFO] httpx — HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"

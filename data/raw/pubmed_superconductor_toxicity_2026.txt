@@ -9,10 +9,20 @@ Published: March 2026
 Abstract:
 Lanthanum and cerium compounds are classified as rare earth elements with established occupational health risks. This systematic review consolidates current peer-reviewed evidence on the toxicological profiles of lanthanum hydride (LaH₁₀), cerium hydride (CeH₉), and ternary lanthanum-cerium hydride systems, with reference to emerging synthesis routes reported in the preprint literature.
 
-Lanthanum compounds: Occupational studies in rare earth mining and processing facilities consistently document pulmonary granulomatosis following chronic inhalation exposure. LaH compounds are not specifically studied, but lanthanide-based pneumoconiosis is well-characterised. IARC classifies cerium compounds as Group 2B (possibly carcinogenic to humans) based on limited animal evidence. No human carcinogenicity data are available for the specific LaH₁₀ phase.
+REGULATORY CLASSIFICATION
 
-Cerium hydrides: The literature documents cytotoxicity in vitro at concentrations above 50 μg/mL, primarily through oxidative stress mechanisms. CeO₂ nanoparticles, while chemically distinct, exhibit hepatotoxicity in rodent models at doses relevant to occupational inhalation scenarios.
+IARC classifies cerium compounds as Group 2B (possibly carcinogenic to humans) based on limited animal evidence from chronic inhalation studies. No human carcinogenicity data are available for the specific LaH₁₀ phase or for ternary lanthanum-cerium hydride compounds. The Group 2B classification applies to cerium oxide and cerium sulphate; its applicability to hydride phases is inferred but not confirmed by direct experimental evidence. Lanthanum compounds are not currently classified by IARC but are under review following the publication of new occupational exposure studies in rare earth processing facilities in China, Australia, and Brazil.
+
+COMPOUND-SPECIFIC TOXICOLOGY
+
+Lanthanum compounds: Occupational studies in rare earth mining and processing facilities consistently document pulmonary granulomatosis following chronic inhalation exposure. LaH compounds are not specifically studied, but lanthanide-based pneumoconiosis is well-characterised in workers exposed to mixed rare earth oxide dusts at concentrations above 1 mg/m³ over multi-year periods. The available evidence does not establish a no-observed-adverse-effect level (NOAEL) for lanthanum hydride inhalation.
+
+Cerium hydrides: The literature documents cytotoxicity in vitro at concentrations above 50 μg/mL, primarily through oxidative stress mechanisms. CeO₂ nanoparticles, while chemically distinct, exhibit hepatotoxicity in rodent models at doses relevant to occupational inhalation scenarios. The cerium hydride literature is predominantly based on CeH₂ and CeH₃ precursors; the higher hydride phases relevant to room-temperature superconductivity synthesis (CeH₉, CeH₁₀) have no published toxicological profiles.
 
 Ternary hydrides: The peer-reviewed literature contains no long-term exposure studies specific to lanthanum-cerium ternary hydride compounds. Preprint claims of practical synthesis routes increase the urgency of safety characterisation. The authors note that the extreme reactivity of hydrogen-rich hydrides under ambient conditions — including risk of spontaneous decomposition — presents safety challenges distinct from those of stable lanthanum or cerium oxides.
+
+OCCUPATIONAL EXPOSURE LIMITS
+
+No national or international occupational exposure limit (OEL) has been established specifically for LaH₁₀, CeH₉, or ternary lanthanum-cerium hydride compounds. The absence of published OELs means that laboratories working with these materials have no regulatory benchmark for air monitoring. In the absence of compound-specific OELs, researchers are advised to apply the ACGIH TLV-TWA for insoluble rare earth compounds (1 mg/m³, as lanthanide) as a provisional maximum, with the acknowledgement that this limit was not derived from hydride-specific toxicity data.
 
 Conclusions: Current peer-reviewed evidence is insufficient to establish safe occupational exposure limits for LaH₁₀ or related ternary hydride compounds. Until inhalation toxicology, reproductive toxicology, and chronic exposure data are available through peer-reviewed channels, these materials should be handled under BSL-equivalent containment protocols for unknown hazard materials.

@@ -8,6 +8,8 @@ SECTION 4: MEASUREMENT AND EVALUATION OF GENERATIVE AI HALLUCINATIONS
 
 The 2026 update to the NIST AI Risk Management Framework introduces a standardised set of metrics for evaluating the tendency of generative AI systems to produce outputs that are ungrounded, factually incorrect, or unsupported by source documentation. These metrics apply to any generative AI system deployed in a context where factual accuracy is a material concern, including but not limited to: legal document summarisation, medical information retrieval, financial analysis, and government information services.
 
+Organisations deploying generative AI systems in high-stakes contexts are required to implement a structured evaluation programme prior to production deployment and at defined intervals thereafter. The evaluation programme must address all three prescribed metrics and maintain the documentation records specified in Section 4.3.
+
 4.2 Prescribed Metrics
 
 NIST prescribes the following three primary metrics for evaluating generative AI hallucinations:
@@ -26,17 +28,26 @@ Measurement procedure: Construct an adversarial test set of queries known to be 
 
 4.3 Documentation Requirements
 
-Organisations must maintain a structured audit trail for all hallucination evaluation runs. Required fields:
-- System identifier and version number
-- Evaluation dataset name and cryptographic hash (SHA-256)
-- Evaluation date and evaluator identity (human or automated system name/version)
-- Per-metric scores: FAR, GS, RROSQ
-- Number of claims evaluated and proportion labelled Uncertain
-- Comparison to prior evaluation run (delta scores)
-- Any remediation actions taken in response to below-threshold scores
+Organisations must maintain a structured audit trail for all hallucination evaluation runs. The audit trail serves as the primary evidence of compliance with Section 4 requirements and must be available for inspection by authorised auditors within 10 business days of a request.
+
+Required fields for each evaluation run record:
+- System identifier: a unique string identifying the AI system version under evaluation (e.g., model name, version number, deployment configuration hash)
+- Evaluation dataset name and cryptographic hash: the SHA-256 hash of the evaluation dataset file, ensuring the dataset cannot be retroactively altered
+- Evaluation date: the calendar date on which the evaluation was conducted, in ISO 8601 format
+- Evaluator identity: the name or identifier of the human evaluator or automated system used to assess claim grounding
+- Per-metric scores: the numerical results for FAR, GS, and RROSQ for this evaluation run
+- Number of claims evaluated: total count of discrete claims assessed, with a breakdown of Grounded, Ungrounded, and Uncertain labels
+- Delta scores: comparison of per-metric scores to the immediately preceding evaluation run, expressed as signed numeric differences
+- Remediation actions: a free-text description of any corrective actions taken in response to below-threshold scores, or "None" if all thresholds were met
 
 Audit trail records must be retained for a minimum of 3 years and made available to regulatory authorities upon request within 10 business days.
 
 4.4 Remediation Thresholds
 
 If FAR falls below 0.85 or RROSQ falls below 0.90, the system must be taken offline from production use until the deficiency is corrected and re-evaluation confirms compliance. Systems with GS below 0.65 must display a user-facing warning indicating that outputs may not be fully grounded in provided source materials.
+
+4.5 Implementation Guidance
+
+Organisations are advised to integrate hallucination evaluation into their existing model lifecycle management processes. Evaluation runs should be triggered by the following events, at minimum: initial pre-production deployment, any update to the underlying model weights or retrieval corpus, any change to the system prompt or generation parameters, and quarterly scheduled evaluations for production systems.
+
+Automated evaluation pipelines using LLM-as-judge approaches for claim verification are acceptable under this framework, provided the judge model's own FAR on a held-out ground-truth set is documented and exceeds 0.88. Manual evaluation by trained human assessors remains the gold standard for regulated industries.

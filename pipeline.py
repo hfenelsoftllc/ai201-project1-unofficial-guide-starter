@@ -56,7 +56,7 @@ def build_pipeline(data_dir: str = "data/raw",
 
     # ── Stage 2: Chunking ─────────────────────────────────────────────────────
     logger.info("\n[Stage 2] Chunking")
-    chunks = chunk_text(docs, chunk_size=300, overlap=45)
+    chunks = chunk_text(docs, chunk_size=150, overlap=22)
     validate_chunks(chunks)
     logger.info("  → %d chunks produced", len(chunks))
 

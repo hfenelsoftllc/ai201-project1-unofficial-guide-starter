@@ -14,7 +14,7 @@
 ---
 Global Research & Institutional Knowledge (AI Safety, Economic Data, Scientific Findings, International Policy)
 
-This domain was chosen because high-value, cross-institutional knowledge is notoriously difficult to synthesize through official channels. Official sources — UNESCO, NIST, World Bank, arXiv — publish independently and do not cross-reference one another. A researcher asking "how do the NIST AI risk metrics align with recent UNESCO R&D investment trends?" has no single authoritative resource; they must manually navigate multiple platforms, reconcile differing methodologies, and piece together a coherent picture. The Unofficial Guide closes that gap by building a grounded Q&A layer over a multi-source corpus, programmatically enforcing source attribution so every answer is traceable and verifiable.
+**The Unofficial Guide** covers global research, economic, and AI-policy knowledge — spanning sources like UNESCO, NIST, World Bank, arXiv, and Pew Research — that are individually authoritative but institutionally siloed. A researcher asking how NIST AI hallucination metrics relate to current R&D investment trends has no single place to look: each organization publishes independently, uses incompatible methodologies, and never cross-references the others. The Unofficial Guide closes that gap by building a grounded Q&A layer over a multi-source corpus, with mandatory source attribution so every answer is traceable back to the specific document it came from.
 ## Documents
 
 <!-- List your specific sources: URLs, subreddit names, forum threads, or file descriptions.

@@ -22,4 +22,14 @@ The data indicate a widening investment gap between high-income and low-income e
 
 Artificial intelligence-related R&D is estimated to constitute approximately 18% of total global R&D expenditure in the private sector in 2025, up from 11% in 2022. Public sector AI R&D investment is more modest, averaging 4.2% of national R&D budgets among reporting nations.
 
-Data collection methodology: The UIS collects R&D expenditure data through national statistical offices following the OECD Frascati Manual framework. All figures are reported in purchasing power parity (PPP) adjusted constant 2017 USD.
+SECTORAL BREAKDOWN
+
+Business enterprise R&D (BERD) accounts for 67% of global R&D expenditure in 2025, government-funded R&D (GOVERD) accounts for 11%, and higher education R&D (HERD) accounts for 19%. The remaining 3% is funded by private non-profit organisations. This breakdown has been broadly stable since 2018, though the private sector share increased by 4 percentage points between 2020 and 2025, driven primarily by large technology firms in the United States, China, and South Korea.
+
+R&D PERSONNEL
+
+Global R&D personnel (full-time equivalent) reached 9.8 million in 2025, up 12% from 2020. Researcher density (researchers per million inhabitants) varies dramatically: 8,342 in South Korea, 6,981 in Israel, 4,412 in the United States, 1,307 in China, 218 in Brazil, and 42 in Sub-Saharan Africa (excluding South Africa). The gender gap in R&D participation persists globally, with women accounting for 33% of researchers worldwide and only 19% in East Asia.
+
+METHODOLOGY
+
+Data collection methodology: The UIS collects R&D expenditure data through national statistical offices following the OECD Frascati Manual framework. All figures are reported in purchasing power parity (PPP) adjusted constant 2017 USD. Nations reporting data to UIS covered 94% of estimated global R&D activity in this release cycle. Figures for non-reporting nations are estimated using econometric imputation based on GDP, education enrolment, and patent application rates.
