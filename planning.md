@@ -178,11 +178,6 @@ Five verifiable test questions with expected correct answers:
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
-
-2.
-
----
 **Challenge 1: Metadata pipeline silent failures**
 
 If `chunk_index` or `source_document` metadata is not programmatically injected at ingestion time (e.g., because ChromaDB's `add()` call omits the `metadatas=` argument), the generation stage will have no source attribution to cite. The failure is silent — the LLM will still produce an answer, but it will be unverifiable. 
@@ -194,6 +189,7 @@ If `chunk_index` or `source_document` metadata is not programmatically injected 
 The World Bank dataset, when loaded as a structured CSV or tabular narrative, may be split such that a country name lands in one chunk and its corresponding debt ratio value lands in the next. A retrieval query for "Rwanda debt-to-GDP" may return only the chunk with Rwanda's name but not its numeric value, producing a retrieval hit that leads to an incomplete answer.
 
 *Mitigation:* Serialize tabular data as complete row-level sentences before chunking (e.g., "Rwanda's debt-to-GDP ratio increased by 6.2 percentage points between 2024 and 2026 (World Bank Open Data)."). This converts tabular structure into self-contained semantic units that survive chunking intact.
+---
 
 **Challenge 3: Weak cosine similarity on highly technical queries**
 
