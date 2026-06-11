@@ -22,15 +22,15 @@ Global Research & Institutional Knowledge (AI Safety, Economic Data, Scientific 
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
+| 1 | The Associated Press (AP)| wire reports on international trade regulations enacted Q1 2026|ap_trade_regulation_q1_2026.txt |
+| 2 |The Guardian |in-depth coverage of Sub-Saharan African macroeconomic trends and debt shifts |guardian_subsaharan_debt_2026.txt |
+| 3 |arXiv preprints (2026) |early-access research on room-temperature superconductivity materials |arxiv_superconductivity_2026.txt |
+| 4 |PubMed Central (PMC) |peer-reviewed biomedical literature on toxicity of superconducting materials | pubmed_superconductor_toxicity_2026.txt|
+| 5 |World Bank Open Data |debt-to-GDP indicators by country |`wdi_sub_saharan_debt_gdp_2024_2026.csv` |
+| 6 |UNESCO Institute for Statistics 2026 R&D release |global GDP percentage allocated to R&D | unesco_rd_2026.txt|
+| 7 |Pew Research Center |public trust in technological innovation (2026 survey data) |pew_research_tech_trust_2026.txt |
+| 8 |Statista market reports |trade regulation compliance deadlines Q1 2026 |statista_trade_compliance_q1_2026.txt |
+| 9 |NIST AI Risk Management Framework (2026 update) |specific metrics for evaluating generative AI hallucinations and documentation requirements |nist_ai_rmf_2026.txt |
 | 10 | | | |
 
 ---
@@ -131,11 +131,11 @@ If a NIST metric definition spans the last two sentences of one chunk and the fi
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 |According to the 2026 UNESCO Institute for Statistics release, what is the current global percentage of GDP allocated to R&D, and how does this statistical trend align with public trust sentiments on technological innovation from the Pew Research Center? |States the specific UNESCO R&D GDP percentage from the 2026 release, then references the Pew sentiment data (direction of trust trend — increasing/decreasing). Both claims cite their respective source documents. The LLM does NOT extrapolate causal relationships beyond what is stated. |
+| 2 |Compare early arXiv findings on room-temperature superconductivity (2026 preprints) with the peer-reviewed PubMed Central consensus on the same materials' human toxicity. How do their conclusions differ? |Identifies arXiv's preliminary claims on superconducting properties and PMC's peer-reviewed findings on toxicity (potentially contradictory). Response explicitly names both source documents, characterizes the nature of the disagreement, and does not resolve the scientific dispute beyond what the texts state. |
+| 3 |What specific metrics does the NIST AI Risk Management Framework prescribe for evaluating generative AI hallucinations, and how should an organization document these tests? |Lists the exact metrics named in the NIST document (e.g., factual accuracy rate, groundedness score, refusal rate on out-of-scope queries) and the prescribed documentation format or audit trail structure. Answer is fully bounded to the NIST chunks retrieved; no additional AI safety knowledge is injected. |
+| 4 |Based on World Bank Open Data, which Sub-Saharan African countries showed a debt-to-GDP ratio increase exceeding 5% between 2024 and 2026, and what macroeconomic drivers did The Guardian attribute to this shift? |Names specific countries from the World Bank dataset meeting the 5% threshold, then references The Guardian's attribution of macroeconomic drivers. If the World Bank data does not include specific country names in the ingested chunks, the system responds: "I do not have enough information to answer this question. |
+| 5 |What were the top five AI product launches announced at CES 2026? |System returns the exact refusal string: "I do not have enough information to answer this question." This question is intentionally out-of-scope (not covered by any ingested document). A successful refusal proves the grounding constraints are working. Any hallucinated product name is a critical failure |
 
 ---
 Five verifiable test questions with expected correct answers:
