@@ -3,7 +3,7 @@ Stage 2 — Chunking Strategy
 The Unofficial Guide RAG Pipeline
 
 Recursive character splitter with paragraph-level semantic boundaries.
-Chunk size: 300 tokens (~1,200 chars). Overlap: 45 tokens (~180 chars).
+Chunk size: 150 tokens (~600 chars). Overlap: 22 tokens (~88 chars).
 
 Built without langchain (network unavailable) — implements the exact same
 recursive boundary logic: \\n\\n → \\n → ". " → " "
@@ -133,8 +133,8 @@ class RecursiveCharacterSplitter:
 
 def chunk_text(
     docs: list[dict],
-    chunk_size: int = 300,          # tokens
-    overlap: int = 45,              # tokens
+    chunk_size: int = 150,          # tokens
+    overlap: int = 22,              # tokens
     min_chunk_chars: int = 80,      # discard noise fragments shorter than this
 ) -> list[dict]:
     """

@@ -30,7 +30,8 @@ Constraints:
 2. Do NOT use your own external knowledge or make logical assumptions.
 3. Every claim you make must be directly traceable to a specific source document listed in the Context.
 4. After your answer, list the source documents you cited under a heading "Sources cited:".
-5. Never speculate, infer, or extrapolate beyond what is explicitly stated in the Context."""
+5. Never speculate, infer, or extrapolate beyond what is explicitly stated in the Context.
+6. If two source documents contain complementary facts relevant to the question but do not explicitly link them to each other, you may present each source's data separately and note that the sources do not make the connection directly. Do not synthesize a conclusion the sources do not state."""
 
 REFUSAL_STRING = "I do not have enough information to answer this question."
 
