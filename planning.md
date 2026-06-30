@@ -62,25 +62,24 @@ The corpus spans four knowledge verticals to support cross-domain synthesis quer
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 **Method:** Recursive character splitter with paragraph-level semantic boundaries
 **Chunk size:**
-300 tokens (~1,200 characters)
+150 tokens (~600 characters)
 **Overlap:**
-15% → 45 tokens (~180 characters)
+~15% → 22 tokens (~88 characters)
 **Reasoning:**
 The corpus is heterogeneous: it includes short AP wire paragraphs (2–4 sentences), dense academic abstracts (6–10 sentences with statistical citations), and structured data narratives from World Bank and Statista. A single mechanical fixed-size split would slice statistical tables and referenced figures across chunk boundaries, destroying the semantic signal needed for retrieval.
 
 A recursive character splitter respects natural boundaries in this order: `\n\n` (paragraph) → `\n` (line break) → `. ` (sentence) → ` ` (word). This ensures that a statistic like "Sub-Saharan debt-to-GDP rose 6.2% in Rwanda (World Bank, 2026)" is never split across two chunks.
 
-**Why 300 tokens?**
-- Too small (< 150 tokens): Short AP paragraphs would be further fragmented, destroying their news context (who, what, when, where). Retrieval would surface fragments without resolution.
-- Too large (> 500 tokens): Dense academic sections would bundle multiple distinct claims into one chunk, causing the retrieval system to retrieve an entire subsection when only one sentence is relevant, inflating context noise.
-- 300 tokens keeps most self-contained academic statements and news paragraphs intact as a single chunk.
+**Why 150 tokens?**
+- The corpus is 9 synthetic documents averaging ~600 words each. At 300 tokens (~1,200 chars), each document yields only 2–3 chunks — below the 50-chunk guardrail. 150 tokens keeps each document at 5–12 self-contained chunks while preserving semantic integrity for short AP paragraphs and academic abstracts.
+- This is the fallback value prescribed in the spec for the sub-50 case, now locked in as the accepted value given the corpus size.
 
-**Why 15% overlap?**
-If a NIST metric definition spans the last two sentences of one chunk and the first two of the next, the 45-token overlap ensures both chunks contain enough of that definition to cross the cosine similarity retrieval threshold when queried. Without overlap, one chunk would have a dangling reference ("as defined above…") with no retrievable antecedent.
+**Why ~15% overlap (22 tokens)?**
+If a NIST metric definition spans the last two sentences of one chunk and the first two of the next, the 22-token overlap ensures both chunks contain enough of that definition to cross the cosine similarity retrieval threshold when queried. Without overlap, one chunk would have a dangling reference ("as defined above…") with no retrievable antecedent.
 
 **Volume sanity check (from documentation constraints):**
-- Estimated total chunks: ~400–900 across all 10 documents (well within the 50–2,000 guardrail range)
-- If chunks fall below 50: chunk size is too large → reduce to 150 tokens
+- Estimated total chunks: ~75 across 9 documents (within the 50–2,000 guardrail range)
+- If chunks fall below 50: chunk size is too large → reduce further or expand corpus
 - If chunks exceed 2,000: chunk size is too small or source material over-ingested → prune to core documents
 ---
 

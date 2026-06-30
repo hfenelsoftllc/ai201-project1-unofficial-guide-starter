@@ -2,21 +2,8 @@
 Stage 3 — Embedding & Vector Store
 The Unofficial Guide RAG Pipeline
 
-Embeds chunks with TF-IDF + SVD (LSA) producing dense 128-dim vectors,
-stored in a ChromaDB-backed vector store.
-
-Design note: sentence-transformers/all-MiniLM-L6-v2 is the target model
-per planning.md. It is unavailable in this sandboxed environment (no pip).
-TF-IDF + LSA is a strong algebraic substitute: it handles vocabulary
-mismatch via latent semantic space, respects cosine similarity distance
-semantics, and runs fully locally with no API cost — all constraints from
-the spec are honoured.
-
-If you later deploy with network access:
-    from sentence_transformers import SentenceTransformer
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    vectors = model.encode(texts, normalize_embeddings=True)
-    # Drop the TfidfVectorizer + TruncatedSVD lines and swap in the above.
+Embeds chunks with sentence-transformers/all-MiniLM-L6-v2 producing
+L2-normalised 384-dim dense vectors, stored in a ChromaDB-backed vector store.
 """
 
 import logging
@@ -26,16 +13,13 @@ from pathlib import Path
 from typing import Optional
 
 import chromadb
-
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.decomposition import TruncatedSVD
-from sklearn.preprocessing import normalize
+from sentence_transformers import SentenceTransformer
 
 logger = logging.getLogger("embed")
 
 # ─── Constants ────────────────────────────────────────────────────────────────
 
-N_COMPONENTS = 128       # LSA embedding dimensions (analogous to MiniLM's 384)
+N_COMPONENTS = 384       # all-MiniLM-L6-v2 output dimensions
 DISTANCE_THRESHOLD = 0.6 # Quality gate from planning.md: scores > 0.6 = weak match
 DB_TABLE = "vectors"
 
@@ -220,77 +204,31 @@ class VectorStore:
         return None
 
 
-# ─── Embedding Model (TF-IDF + LSA) ──────────────────────────────────────────
+# ─── Embedding Model (sentence-transformers) ──────────────────────────────────
 
 class EmbeddingModel:
     """
-    TF-IDF + Truncated SVD (Latent Semantic Analysis).
+    Wrapper around sentence-transformers/all-MiniLM-L6-v2.
 
-    Produces L2-normalised dense vectors. Cosine similarity between
-    any two vectors maps to [0, 1]. Handles vocabulary mismatch via
-    latent topic space — analogous to neural dense retrieval.
-
-    Must be fit() on the full corpus before encode() calls.
+    Produces L2-normalised 384-dim dense vectors. Cosine similarity between
+    any two vectors maps to [0, 1]. Pre-trained — no corpus fit required.
     """
 
-    def __init__(self, n_components: int = N_COMPONENTS):
-        self.n_components = n_components
-        self._vectorizer = TfidfVectorizer(
-            sublinear_tf=True,
-            min_df=1,
-            max_df=0.95,
-            ngram_range=(1, 2),
-            strip_accents="unicode",
-            analyzer="word",
-        )
-        self._svd = TruncatedSVD(
-            n_components=n_components,
-            algorithm="randomized",
-            random_state=42,
-        )
-        self._fitted = False
+    def __init__(self):
+        logger.info("Loading sentence-transformers model (all-MiniLM-L6-v2)…")
+        self._model = SentenceTransformer("all-MiniLM-L6-v2")
 
     def fit(self, texts: list[str]) -> None:
-        logger.info("Fitting embedding model on %d texts…", len(texts))
-        tfidf_matrix = self._vectorizer.fit_transform(texts)
-        self._svd.fit(tfidf_matrix)
-        self._fitted = True
-        explained = self._svd.explained_variance_ratio_.sum()
-        logger.info(
-            "  ✓ Embedding model fitted. Vocab=%d, SVD explains %.1f%% variance.",
-            len(self._vectorizer.vocabulary_),
-            explained * 100,
-        )
+        logger.info("EmbeddingModel.fit() — model is pre-trained, no-op.")
 
     def encode(self, texts: list[str]) -> np.ndarray:
-        """Return L2-normalised embedding matrix, shape (n, n_components)."""
-        if not self._fitted:
-            raise RuntimeError("Call fit() before encode().")
-        tfidf = self._vectorizer.transform(texts)
-        dense = self._svd.transform(tfidf).astype(np.float32)
-        return normalize(dense, norm="l2")
+        """Return L2-normalised embedding matrix, shape (n, 384)."""
+        return self._model.encode(
+            texts, normalize_embeddings=True, show_progress_bar=False
+        )
 
     def encode_one(self, text: str) -> np.ndarray:
         return self.encode([text])[0]
-
-    def save(self, path: str) -> None:
-        """Persist vectoriser + SVD weights via numpy."""
-        import pickle
-        with open(path, "wb") as f:
-            pickle.dump({"vectorizer": self._vectorizer, "svd": self._svd}, f)
-        logger.info("Embedding model saved to '%s'", path)
-
-    @classmethod
-    def load(cls, path: str) -> "EmbeddingModel":
-        import pickle
-        with open(path, "rb") as f:
-            data = pickle.load(f)
-        model = cls()
-        model._vectorizer = data["vectorizer"]
-        model._svd        = data["svd"]
-        model._fitted     = True
-        logger.info("Embedding model loaded from '%s'", path)
-        return model
 
 
 # ─── Source type classifier ───────────────────────────────────────────────────
@@ -345,8 +283,7 @@ def embed_and_store(
     (EmbeddingModel, VectorStore) — both ready for retrieval
     """
     Path(vectorstore_dir).mkdir(parents=True, exist_ok=True)
-    db_path    = str(Path(vectorstore_dir) / f"{collection_name}.db")
-    model_path = str(Path(vectorstore_dir) / f"{collection_name}_model.pkl")
+    db_path = str(Path(vectorstore_dir) / f"{collection_name}.db")
 
     texts = [c["text"] for c in chunks]
 
@@ -354,7 +291,6 @@ def embed_and_store(
     if model is None:
         model = EmbeddingModel()
         model.fit(texts)
-        model.save(model_path)
     else:
         logger.info("Reusing pre-fitted embedding model.")
 
