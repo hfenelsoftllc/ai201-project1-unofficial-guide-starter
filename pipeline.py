@@ -20,6 +20,12 @@ import logging
 import sys
 from pathlib import Path
 
+# Force UTF-8 output on Windows (cp1252 default can't encode box-drawing/emoji)
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 # Configure logging before any imports that use it
 logging.basicConfig(
     level=logging.INFO,
@@ -119,9 +125,9 @@ def main():
         collection_name=args.collection,
     )
 
-    print(f"\n{'═'*72}")
-    print(f"  Pipeline ready — {store.count()} chunks indexed.")
-    print(f"{'═'*72}\n")
+    print(f"\n{'='*72}")
+    print(f"  Pipeline ready -- {store.count()} chunks indexed.")
+    print(f"{'='*72}\n")
 
     # ── Query mode ────────────────────────────────────────────────────────────
     if args.query:
