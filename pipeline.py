@@ -38,18 +38,21 @@ def build_pipeline(data_dir: str = "data/raw",
                    vectorstore_dir: str = "vectorstore",
                    collection_name: str = "unofficial_guide"):
     """Stages 1–3: ingest, chunk, embed, store."""
-    from corpus_seed import seed_corpus
+    from corpus_seed import seed_corpus, CORPUS
     from ingest import load_corpus, validate_docs
     from chunk import chunk_text, validate_chunks
     from embed import embed_and_store
 
-    # ── Seed corpus if data dir is empty ──────────────────────────────────────
+    # ── Seed corpus if any files are missing ──────────────────────────────────
     raw_dir = Path(data_dir)
     raw_dir.mkdir(parents=True, exist_ok=True)
     existing = [f for f in raw_dir.iterdir() if f.is_file()]
 
-    if not existing:
-        logger.info("Data directory is empty — seeding synthetic corpus…")
+    if len(existing) < len(CORPUS):
+        logger.info(
+            "Found %d/%d corpus files — seeding missing documents…",
+            len(existing), len(CORPUS)
+        )
         seed_corpus(str(raw_dir))
     else:
         logger.info("Found %d existing files in '%s'", len(existing), data_dir)
