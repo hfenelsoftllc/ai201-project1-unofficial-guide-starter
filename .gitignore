@@ -18,7 +18,7 @@ chroma/
 
 # macOS
 .DS_Store
-
+ 
 # Generated vector store artifacts
 vectorstore/
 *.pkl
