@@ -1,0 +1,35 @@
+OECD Science, Technology and Innovation Outlook 2026
+Organisation for Economic Co-operation and Development
+STI Indicators — Selected Data Highlights
+
+Published: March 2026
+
+RESEARCH AND DEVELOPMENT INVESTMENT TRENDS
+
+OECD member nations collectively invested an average of 2.71% of GDP in research and development in 2025, up from 2.58% in 2023. This exceeds the global average of 2.63% reported by UNESCO for the same period, reflecting the concentration of R&D investment in high-income economies. The OECD Secretariat projects that total R&D expenditure across member nations will surpass USD 2.4 trillion (PPP-adjusted) by the end of 2026, driven primarily by private sector investment in artificial intelligence and semiconductor research.
+
+TOP INVESTOR NATIONS (R&D AS % OF GDP, 2025)
+
+Israel leads OECD members at 6.01% of GDP, driven by defence-related technology investment and a dense startup ecosystem concentrated in Tel Aviv and Haifa. South Korea follows at 4.93%, reflecting sustained government commitment to semiconductor and battery technology R&D under the K-Chips Act framework. Sweden (3.62%), Austria (3.34%), and the United States (3.46%) round out the top five among larger economies. The United States maintained its position as the largest absolute spender, with total R&D expenditure of approximately USD 856 billion in 2025.
+
+Among non-OECD economies for which comparable data exists, China's R&D investment reached 2.64% of GDP, placing it above the OECD average for the first time in recorded history and reflecting a 0.31 percentage point increase since 2022.
+
+ARTIFICIAL INTELLIGENCE R&D
+
+The OECD AI Policy Observatory estimates that AI-related R&D constitutes approximately 19% of total private sector R&D expenditure across OECD member economies in 2025. Foundation model development is concentrated in five companies — three American and two East Asian — which collectively account for an estimated 34% of total global AI R&D investment. OECD governments directly fund an average of 4.8% of national AI R&D budgets, with the remainder funded by the private sector. Public-sector AI R&D is concentrated in defence, health informatics, and climate modelling applications.
+
+PATENT FILING TRENDS
+
+Patent applications filed under the Patent Cooperation Treaty (PCT) for AI-related inventions reached 87,400 in 2025, a 23% increase from 2023. China accounted for 38% of AI-related PCT applications, the United States for 27%, and Japan, South Korea, and Germany together for a further 18%. The accelerating pace of AI patent filing has prompted OECD to recommend harmonised patent examination standards specifically for machine learning innovations, noting that existing novelty standards were developed prior to the widespread application of neural network architectures.
+
+INNOVATION ECOSYSTEM INDICATORS
+
+Researcher density (researchers per million inhabitants) across OECD members averages 4,812 in 2025. The OECD notes a persistent gender gap: women account for 33% of researchers in OECD member countries, ranging from 53% in Latvia to 16% in Japan. OECD recommends targeted grant programmes and returnship initiatives to address this imbalance, estimating that closing the gender gap in research participation could increase global R&D output by 8–12%.
+
+Venture capital investment in deep-tech sectors (AI, quantum computing, biotechnology, advanced materials) reached USD 142 billion across OECD members in 2025, a 31% increase from 2023, suggesting strong private sector confidence in translating R&D investment into commercial output.
+
+POLICY RECOMMENDATIONS
+
+The 2026 Outlook recommends that OECD member governments: (1) increase public R&D investment toward 1% of GDP for government-performed R&D (GOVERD), where the current average is 0.31%; (2) adopt open science mandates requiring publicly-funded research outputs to be made freely accessible within 12 months of publication; (3) establish national AI Safety Institutes to coordinate hallucination risk evaluation standards with reference to the NIST AI Risk Management Framework.
+
+OECD | Directorate for Science, Technology and Innovation | March 2026

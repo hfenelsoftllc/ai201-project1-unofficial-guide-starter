@@ -13,7 +13,9 @@ Last updated: 2026-06-30
 - **planning.md** — filled in Architecture section with ASCII pipeline diagram; added OECD as document #10 in table and verticals list; updated chunk count to 10 documents
 - **README.md** — added Ingestion Pipeline section (loader table + preprocessing); added Embedding Model & Production Tradeoffs section (comparison table); updated document count to 10
 - **planning_before.md** — deleted (blank template was confusing the grader)
-- **requirements.txt** — fixed: added `pdfplumber==0.11.4`, `beautifulsoup4>=4.12.0`, `lxml>=5.0.0`; uncommented `pdfplumber`
+- **requirements.txt** — fixed: added `pdfplumber==0.11.4`, `beautifulsoup4>=4.12.0`, `lxml>=5.0.0`
+- **pipeline.py** — forced UTF-8 output on Windows via `sys.stdout.reconfigure(encoding="utf-8")`; replaced `═` (U+2550) with `=` in banner; fixed corpus seed guard to trigger when `len(existing) < len(CORPUS)` instead of only when empty
+- **evaluate.py** — removed stale pkl/db loading left over from TF-IDF era; replaced with `EmbeddingModel()` direct instantiation and `chroma_dir` existence check
 
 ## Decisions made
 
@@ -24,25 +26,34 @@ Last updated: 2026-06-30
 
 ## Problems solved
 
-- Q4 false-refusal: adversarial system prompt's "never infer" constraint caused full refusal even when all required facts were in retrieved context — fixed by constraint #6 in `generate.py:SYSTEM_PROMPT`
-- Sub-50 chunk guardrail: corpus was too small at 300 tokens → reduced to 150 tokens, expanded each source doc to ~500–780 words
-- `GROQ_API_KEY` not loading: `load_dotenv()` was never called anywhere — fixed by adding it to top of `query.py`
-- Grader confusion: `planning_before.md` (blank template) was in repo alongside `planning.md` — deleted
-- `requirements.txt` missing deps: `ingest.py` imports `pdfplumber` and `BeautifulSoup` at top level but both were absent — added all three packages
+- Q4 false-refusal: adversarial system prompt's "never infer" constraint caused full refusal — fixed by constraint #6 in `generate.py:SYSTEM_PROMPT`
+- Sub-50 chunk guardrail: reduced to 150 tokens, expanded source docs to ~500–780 words
+- `GROQ_API_KEY` not loading: added `load_dotenv()` to top of `query.py`
+- Grader confusion: deleted `planning_before.md` (blank template)
+- `requirements.txt` missing deps: added `pdfplumber`, `beautifulsoup4`, `lxml`
+- ChromaDB dimension mismatch: deleted stale `vectorstore/` dir (75-dim TF-IDF → 384-dim sentence-transformers)
+- Windows cp1252 encode error: added `sys.stdout.reconfigure(encoding="utf-8")` to `pipeline.py`
+- `evaluate.py` pkl crash: replaced `EmbeddingModel.load(model_path)` with `EmbeddingModel()` and chroma dir check
+- 10th document not seeding: seed guard was `if not existing` — changed to `if len(existing) < len(CORPUS)` so missing files are written even when `data/raw/` is non-empty
 
 ## Current state
 
-- **Fork (`hfenelsoftllc/main`)**: fully up to date with all changes, at commit `072dd58`
-- **No open PRs** anywhere — upstream PR #44 and #45 both closed (no merge permissions on upstream)
-- Clean working tree, no uncommitted changes
-- `vectorstore/` is gitignored and will be rebuilt on next `python pipeline.py` run
+- **Fork (`hfenelsoftllc/main`)**: fully up to date at commit `aba593d`
+- **No open PRs** anywhere
+- **Clean working tree**, no uncommitted changes
+- `data/raw/` contains all 10 documents (verified: `oecd_science_technology_2026.txt` seeds correctly)
+- `python pipeline.py --eval` runs end-to-end: 10 docs, 84 chunks, all 5 eval questions complete, Q5 adversarial refusal correct (1/1), mean best-chunk distance 0.314
+- Offline mode only (no `GROQ_API_KEY`) — Q1–Q4 return raw chunk text; Q5 refusal works regardless
+- `vectorstore/` is gitignored and rebuilds on each `python pipeline.py` run
 - No stretch features implemented (hybrid search, chunking comparison, metadata filtering, conversational memory)
 
 ## Next session starts with
 
-Run `python pipeline.py --eval` to verify sentence-transformers loads correctly and all 5 evaluation questions produce valid results without errors.
+No critical tasks remain. Optional next steps:
+1. Set `GROQ_API_KEY` in `.env` and re-run `python pipeline.py --eval` to get real LLM answers for Q1–Q4
+2. Implement stretch features if desired (hybrid search, chunking comparison, metadata filtering, conversational memory)
 
 ## Open questions
 
-- Should any stretch features be implemented (hybrid search, chunking comparison, metadata filtering, conversational memory)?
-- Confirm whether grader feedback is fully resolved now that `planning_before.md` is deleted and `requirements.txt` is fixed
+- Should any stretch features be implemented?
+- With a `GROQ_API_KEY` set, do Q1–Q4 produce accurate answers meeting the expected criteria in `evaluate.py`?
