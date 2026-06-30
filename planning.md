@@ -31,7 +31,7 @@ Global Research & Institutional Knowledge (AI Safety, Economic Data, Scientific 
 | 7 |Pew Research Center |public trust in technological innovation (2026 survey data) |pew_research_tech_trust_2026.txt |
 | 8 |Statista market reports |trade regulation compliance deadlines Q1 2026 |statista_trade_compliance_q1_2026.txt |
 | 9 |NIST AI Risk Management Framework (2026 update) |specific metrics for evaluating generative AI hallucinations and documentation requirements |nist_ai_rmf_2026.txt |
-| 10 | | | |
+| 10 |OECD Science, Technology and Innovation Outlook 2026 |R&D investment by nation, AI patent trends, researcher density, and innovation ecosystem indicators |oecd_science_technology_2026.txt |
 
 ---
 The corpus spans four knowledge verticals to support cross-domain synthesis queries:
@@ -52,6 +52,7 @@ The corpus spans four knowledge verticals to support cross-domain synthesis quer
 
 **Technology & Policy**
 - NIST AI Risk Management Framework (2026 update) — specific metrics for evaluating generative AI hallucinations and documentation requirements
+- OECD Science, Technology and Innovation Outlook 2026 — R&D investment trends, AI patent filings, researcher density, and policy recommendations
 
 *Source variety rationale:* Sources intentionally span news wire, peer-reviewed journals, preprint repositories, government statistical databases, nonpartisan polling, and market intelligence platforms. This maximizes the system's ability to handle cross-domain synthesis questions and exposes retrieval quality issues that a single-domain corpus would mask.
 ## Chunking Strategy
@@ -78,7 +79,7 @@ A recursive character splitter respects natural boundaries in this order: `\n\n`
 If a NIST metric definition spans the last two sentences of one chunk and the first two of the next, the 22-token overlap ensures both chunks contain enough of that definition to cross the cosine similarity retrieval threshold when queried. Without overlap, one chunk would have a dangling reference ("as defined above…") with no retrievable antecedent.
 
 **Volume sanity check (from documentation constraints):**
-- Estimated total chunks: ~75 across 9 documents (within the 50–2,000 guardrail range)
+- Estimated total chunks: ~80 across 10 documents (within the 50–2,000 guardrail range)
 - If chunks fall below 50: chunk size is too large → reduce further or expand corpus
 - If chunks exceed 2,000: chunk size is too small or source material over-ingested → prune to core documents
 ---
@@ -197,11 +198,23 @@ NIST framework language is bureaucratic and technical ("trustworthy AI governanc
 *Mitigation:* Experiment with query expansion — prepend "According to official government AI safety guidelines:" to technical queries — to bias the embedding toward the document's register. If distance scores remain above 0.6 on Q3, increase chunk overlap to 25%.
 ## Architecture
 
-<!-- Draw a diagram of your pipeline showing the five stages:
-     Document Ingestion → Chunking → Embedding + Vector Store → Retrieval → Generation
-     Label each stage with the tool or library you're using.
-     You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
-     You'll use this diagram as context when prompting AI tools to implement each stage. -->
+```
+Stage 1           Stage 2           Stage 3                Stage 4          Stage 5
+Ingestion         Chunking          Embedding + Store       Retrieval        Generation
+
+ingest.py    →   chunk.py    →     embed.py          →    retrieve.py  →   generate.py
+
+pdfplumber        Recursive         sentence-transformers   Cosine sim       llama-3.3-70b
+beautifulsoup4    character         all-MiniLM-L6-v2        top-k = 4        via Groq API
+csv (stdlib)      splitter          ChromaDB                dist gate ≤ 0.6  (offline
+                  150 tok /         vectorstore/                              rule-based
+                  22 tok overlap                                              fallback)
+
+     ↑
+corpus_seed.py  — seeds data/raw/ with 10 synthetic documents on first run if empty
+pipeline.py     — orchestrates all 5 stages; CLI entry point (--query / --eval / REPL)
+query.py        — lazy ask() wrapper consumed by app.py (Gradio web UI)
+```
 
 ---
 

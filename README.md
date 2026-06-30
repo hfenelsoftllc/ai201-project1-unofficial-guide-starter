@@ -22,6 +22,32 @@ Document Ingestion → Chunking → Embedding + Vector Store → Retrieval → G
 | `pipeline.py` | — | Full orchestrator (build + query + eval) |
 | `evaluate.py` | — | 5-question evaluation harness → CSV log |
 
+## Ingestion Pipeline
+
+Documents are loaded from `data/raw/` by `ingest.py`, which routes each file to a format-specific loader based on extension:
+
+| Extension | Loader | Preprocessing |
+|-----------|--------|---------------|
+| `.txt` | stdlib `open()` | Collapse whitespace, strip control chars |
+| `.csv` | `csv.DictReader` | Serialize each row as a self-contained prose sentence so country + value never splits across chunk boundaries |
+| `.html` | `beautifulsoup4` | Strip `<script>`, `<nav>`, `<footer>`, `<aside>`, `<form>`; isolate `<article>`/`<main>` content region |
+| `.pdf` | `pdfplumber` | Extract page text; raise `ValueError` if all pages return empty (image-only PDF guard) |
+
+All formats pass through `_clean_text()` — HTML entity decoding, control-character removal, whitespace collapse. Each document is returned as `{"text": str, "source": filename}`. `validate_docs()` asserts non-empty `text` and `source` fields before the corpus proceeds to chunking.
+
+## Embedding Model & Production Tradeoffs
+
+**Model used:** `sentence-transformers/all-MiniLM-L6-v2` — produces 384-dim L2-normalised dense vectors, runs fully locally, no per-query API cost, deterministic embeddings at ingestion time.
+
+**Tradeoffs for a production system:**
+
+| Option | Tradeoff |
+|--------|----------|
+| `text-embedding-3-large` (OpenAI) | Higher accuracy on domain-specific scientific text; 3,072-dim vectors improve precision but add latency and per-query API cost at scale |
+| `multilingual-e5-large` | Necessary if corpus includes non-English UNESCO or World Bank source documents |
+| Cohere Embed v3 | Supports compressed int8 embeddings, reducing ChromaDB memory footprint for large corpora |
+| `all-MiniLM-L6-v2` (current) | Best local/offline tradeoff: strong semantic similarity for English prose, zero API cost, 384-dim fits comfortably in memory for corpora up to ~1M chunks |
+
 ## Quick Start
 
 ```bash
@@ -51,7 +77,7 @@ Without a key, the pipeline uses an offline rule-based context extractor.
 
 | Metric | Value |
 | --- | --- |
-| **Documents** | 9 |
+| **Documents** | 10 |
 | **Total chunks** | **75** |
 | **Chunk size** | 150 tokens (~600 chars) |
 | **Overlap** | 22 tokens (~15%) |
