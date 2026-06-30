@@ -299,15 +299,14 @@ def main(auto_mode: bool = False):
     # ── Load pre-built pipeline ──
     vectorstore_dir = "vectorstore"
     collection_name = "unofficial_guide"
-    model_path = f"{vectorstore_dir}/{collection_name}_model.pkl"
     db_path    = f"{vectorstore_dir}/{collection_name}.db"
     chroma_dir = Path(vectorstore_dir) / "chroma"
 
-    if not Path(model_path).exists() or not chroma_dir.exists():
+    if not chroma_dir.exists():
         print("  ⚠ Pipeline not found. Run: python pipeline.py  first.\n")
         sys.exit(1)
 
-    model = EmbeddingModel.load(model_path)
+    model = EmbeddingModel()
     store = VectorStore(db_path)
     print(f"  Loaded vector store: {store.count()} chunks indexed.\n")
 
