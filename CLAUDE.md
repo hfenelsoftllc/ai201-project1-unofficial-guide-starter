@@ -48,13 +48,13 @@ corpus_seed.py  →  ingest.py  →  chunk.py  →  embed.py  →  retrieve.py  
 
 ### Key design decisions
 
-**Embedding model:** The spec called for `sentence-transformers/all-MiniLM-L6-v2` but `embed.py` uses **TF-IDF + Truncated SVD (LSA)** producing 128-dim L2-normalised vectors stored in ChromaDB. This was a deliberate substitution for offline dev. The 3-line swap to restore `SentenceTransformer` is documented in `embed.py`'s module docstring.
+**Embedding model:** `embed.py` uses **`sentence-transformers/all-MiniLM-L6-v2`** producing 384-dim L2-normalised vectors stored in ChromaDB. The `EmbeddingModel` class wraps `SentenceTransformer`; `fit()` is a no-op since the model is pre-trained. No pkl persistence — HuggingFace cache handles the model weights.
 
 **Vector store:** ChromaDB `PersistentClient` backed by `vectorstore/chroma/`. The `VectorStore` class in `embed.py` hard-asserts four mandatory metadata fields (`source_document`, `chunk_index`, `source_type`, `raw_text_payload`) on every `add()` call.
 
 **Quality gate:** Cosine distance threshold `0.6` (defined as `DISTANCE_THRESHOLD` in `embed.py`, imported by `retrieve.py` and `pipeline.py`). If all top-k results exceed this, `retrieve()` sets `should_refuse=True` and `generate_answer()` returns the hard refusal string verbatim.
 
-**Generation:** Two modes determined by `GROQ_API_KEY` presence — Groq API (`llama-3.3-70b-versatile`, temperature 0.0) or offline rule-based extractor (`_offline_generate` in `generate.py`). The adversarial system prompt in `generate.py:SYSTEM_PROMPT` is the primary anti-hallucination control; it constrains the LLM to source-only answers and mandates a "Sources cited:" section.
+**Generation:** Two modes determined by `GROQ_API_KEY` presence — Groq API (`llama-3.3-70b-versatile`, temperature 0.0) or offline rule-based extractor (`_offline_generate` in `generate.py`). The adversarial system prompt in `generate.py:SYSTEM_PROMPT` is the primary anti-hallucination control; it constrains the LLM to source-only answers, mandates a "Sources cited:" section, and (constraint #6) permits stating each source's data separately for multi-hop synthesis questions where two sources contain complementary facts that don't explicitly cross-reference each other.
 
 **Query expansion:** `retrieve.py:_expand_query()` prepends domain-register prefixes to reduce vocabulary mismatch between colloquial queries and formal document text (e.g., queries containing "nist" or "hallucin" get an "According to official government AI safety guidelines:" prefix).
 
@@ -70,6 +70,6 @@ corpus_seed.py  →  ingest.py  →  chunk.py  →  embed.py  →  retrieve.py  
 4. Sends to Groq (or offline fallback) with the adversarial system prompt
 5. Returns `(answer_text, cited_sources_list)`
 
-## Known Failure Pattern
+## Known Failure Pattern (mitigated)
 
-The adversarial system prompt's "never infer or extrapolate" constraint causes false refusals on multi-hop synthesis questions (where answers require comparing figures across two sources that don't cross-reference each other). The generation stage correctly refuses rather than hallucinating, but discards grounded partial answers it could safely give. See the Q4 analysis in `README.md` for the full diagnosis.
+The original adversarial system prompt's "never infer or extrapolate" constraint caused false refusals on multi-hop synthesis questions (Q4). Constraint #6 was added to `SYSTEM_PROMPT` in `generate.py` to allow grounded per-source statements when two sources contain complementary facts that don't explicitly link each other. See the Q4 analysis in `README.md` for the full root-cause diagnosis.
